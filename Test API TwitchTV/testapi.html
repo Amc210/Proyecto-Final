@@ -1,0 +1,21 @@
+<html>
+
+<script type="text/javascript">
+
+const Url='https://api.twitch.tv/helix/games/top/';
+
+const options = {
+	method: "GET",
+	headers: {
+	"Client-ID": "o3fgxhag6m7u124ipais3ctijgs9k0"
+	}
+
+}
+
+fetch(Url, options)
+.then(data=>{return data.json()})
+.then(res=>{console.log(res)})
+.catch(error=>console.log(error));
+
+</script>
+</html>
