@@ -2,15 +2,28 @@
 
 <script type="text/javascript">
 
-const Url='https://api.twitch.tv/helix/games/top/';
+const Url='https://api.twitch.tv/helix/games/top?first=100';
 
 const options = {
 	method: "GET",
 	headers: {
-	"Client-ID": "o3fgxhag6m7u124ipais3ctijgs9k0"
+	"Client-ID": "o3fgxhag6m7u124ipais3ctijgs9k0",
+	"Authorization": "Bearer lcnknv9ymi3zbpeb2kqumq1721wxb7"
 	}
 
 }
+
+const Url2 = 'https://id.twitch.tv/oauth2/token?client_id=o3fgxhag6m7u124ipais3ctijgs9k0&client_secret=z4pit4v0aygjr7z9e6ehlj3o76acji&grant_type=client_credentials';
+
+const options2 = {
+	method: "POST"
+}
+
+//fetch(Url2, options2)
+//.then(data=>{return data.json()})
+//.then(res=>{console.log(res)})
+//.catch(error=>console.log(error));
+
 
 fetch(Url, options)
 .then(data=>{return data.json()})
@@ -19,3 +32,4 @@ fetch(Url, options)
 
 </script>
 </html>
+
