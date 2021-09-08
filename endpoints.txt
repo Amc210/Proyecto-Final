@@ -1,4 +1,0 @@
-endpoints
-amigos --> listar usuarios (get), listar amigos (get), añadir amigo (post), borrar amigo (delete)
-mensajes --> enviar mensaje (post), borrar mensaje (delete) listar mensajes (get) *dificil, dejar para el final xd
-grupos --> buscar grupos por nombre (get), buscar grupo por juego (get), crear grupo (put), unirse a grupo (post), abandonar grupo (delete)
