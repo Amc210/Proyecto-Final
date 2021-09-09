@@ -6,7 +6,7 @@ use LFG;
 create table juegos (id_juego int primary key auto_increment, nombre varchar(100), imagen_juego varchar(255));
 create table grupos (id_grupo int primary key auto_increment, nombre varchar(40), creador varchar(40), id_juego int, foreign key (id_juego) REFERENCES juegos (id_juego));
 
-create table usuarios (id_usuario int primary key auto_increment, nick varchar(20), nombre varchar(40), tipo int, email varchar(50), foreign key (id_amigo) REFERENCES usuario(id_usuario));
+create table usuarios (id_usuario int primary key auto_increment, nick varchar(20), nombre varchar(40), tipo int, email varchar(50));
 
 create table mensajes_privados (id_mensaje_privado int primary key auto_increment, contenido varchar(255), timestamp timestamp, id_emisor int, id_receptor int, key (id_emisor), key (id_receptor), foreign key (id_emisor) REFERENCES usuario(id_usuario), foreign key (id_receptor) REFERENCES usuario(id_usuario));
 
