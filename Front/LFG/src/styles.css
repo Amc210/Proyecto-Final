@@ -1,1 +1,165 @@
 /* You can add global styles to this file, and also import other style files */
+html{
+    height: 100%;
+}
+
+.bck-col{
+    background-color: #465362;
+}
+
+header{
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    height: 120px;
+    width: auto;
+}
+
+header > div{
+    vertical-align: middle;
+}
+
+body{
+    margin: 0;
+    min-height: 100%;
+}
+
+.btn-nav{
+    background-color:transparent;
+    color: white;
+    font-family: 'Jet-Set';
+    font-size: 20px;
+    border: 0;
+    padding-right: 8px;
+
+}
+
+.btn-nav:hover{
+    border-bottom: 3px solid black;
+}
+
+.btn-nav:hover::before{
+    content: "►";
+}
+
+._ngcontent-utd-c56:nth-child(2n):hover::before{
+    content: "►";
+    color: white !important;
+}
+
+footer{
+    height: 160px;
+}
+
+.footer-row{
+    border: 1px solid yellow;
+}
+
+.comp-container{
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    align-content: center;
+    align-items: stretch
+}
+
+.component-header{
+    padding-bottom: 4%;
+}
+
+.comp-title{
+    margin-bottom: 20px;
+    display: inline;
+}
+
+.comp-subtitle{
+    margin-top: 10px;
+}
+
+.comp-text{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+main{
+    border: 2px solid black;
+    width: 100%;
+    min-height: 720px;
+    margin: 0;
+    padding: 2%;
+}
+
+aside{
+    background-color: #011936;
+    width: 24%;
+    height: auto;
+    border: 2px solid lightblue;
+    margin: 0;
+    padding: 26px;
+    color: white;
+}
+
+nav{
+    height: 100px;
+    vertical-align: middle;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+}
+
+ul > li{
+    display: inline !important;
+}
+
+.jetset{
+    font-family:'Jet-Set' !important;
+    font-weight: 300;
+}
+
+.logostile{
+    font-family:'Logostile' !important;
+    font-weight: 300;
+}
+
+.font-sm{
+    font-size: 28px;
+}
+
+.font-md{
+    font-size: 38px;
+}
+
+.font-lg{
+    font-size: 48px
+}
+
+@font-face {
+    font-family: 'Jet-Set';
+    src: url("assets/fonts/Jet-Set.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Logostile';
+    src: url("assets/fonts/Logostile.ttf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Tenby-Five';
+    src: url("assets/fonts/tenby-five.otf");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Modern Sans';
+    src: url("assets/fonts/ModernSans-Light.otf");
+    font-weight: 300;
+}
+
+
+
