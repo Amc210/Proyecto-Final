@@ -20,6 +20,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Grupo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="id_grupo")
 	private int id;
 	
 	@Column(name="nombre")
@@ -28,15 +29,15 @@ public class Grupo {
 	private String creador;
 	
 	@ManyToOne
-	@JoinColumn(name = "juego")
+	@JoinColumn(name = "id_juego")
 	Juego juego;
 	
 	@OneToMany
-	@JoinColumn(name = "mensaje")
+	@JoinColumn(name = "id_mensaje")
 	private List<Mensaje> mensaje;
 	
 	@OneToMany
-	@JoinColumn(name="id")
+	@JoinColumn(name="id_grupo")
 	private List<Usuario_pertenece_a_grupo> usuario_pertenece_a_grupo;
 	
 	

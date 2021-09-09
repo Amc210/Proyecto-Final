@@ -15,11 +15,12 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="usuario")
+@Table(name="usuarios")
 public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="id_usuario")
 	private int id;
 	@Column(name="nick")
 	private String nick;

@@ -1,5 +1,6 @@
 package MainApp.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,19 +10,20 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario_pertenece_a_grupo")
+@Table(name="usuarios_pertenecen_a_grupos")
 public class Usuario_pertenece_a_grupo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="id_usuario_grupo")
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "grupo")
+	@JoinColumn(name = "id_grupo")
 	Grupo grupo;
 	
 	@ManyToOne
-	@JoinColumn(name = "usuario")
+	@JoinColumn(name = "id_usuario")
 	Usuario usuario;
 	
 	// Constructores

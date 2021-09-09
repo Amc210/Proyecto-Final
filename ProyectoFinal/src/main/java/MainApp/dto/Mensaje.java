@@ -17,6 +17,7 @@ import javax.persistence.Table;
 public class Mensaje {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_mensaje")
 	private int id;
 	
 	@Column(name="contenido")
@@ -25,7 +26,7 @@ public class Mensaje {
 	private Date timestamp;
 	
 	@ManyToOne
-	@JoinColumn(name = "grupo")
+	@JoinColumn(name = "id_grupo")
 	Grupo grupo;
 	
 	// Contructores

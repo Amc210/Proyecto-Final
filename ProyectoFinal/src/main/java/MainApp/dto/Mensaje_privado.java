@@ -12,11 +12,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="mensaje_privado")
+@Table(name="mensajes_privados")
 public class Mensaje_privado {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="id_mensaje_privado")
 	private int id;
 	@Column(name="contenido")
 	private String contenido;

@@ -10,11 +10,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="usuario_agrega_amigos")
+@Table(name="usuarios_agregan_amigos")
 public class Agregan {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="id_usuario_agrega_amigos")
 	private int id;
 	@Column(name="id_amigo")
 	private int id_amigo;

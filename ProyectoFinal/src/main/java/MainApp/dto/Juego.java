@@ -19,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Juego {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name="id_juego")
 	private int id;
 	@Column(name="nombre")
 	private String nombre;
@@ -26,7 +27,7 @@ public class Juego {
 	private String imagen;
 	
 	@OneToMany
-	@JoinColumn(name = "grupos")
+	@JoinColumn(name = "id_grupo")
 	private List<Grupo> grupo;
 	
 	// Constructores
