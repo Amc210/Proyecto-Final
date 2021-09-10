@@ -18,7 +18,10 @@ export class AppComponent implements OnInit {
 
   routeHome:boolean = false;
 
+  tituloAsideData:string = "";
   asideData:string = "";
+
+  asideMensajes:string = "Puedes enviar mensajes a tus contactos para organizar grupos o charlar. Gestiona tus mensajes o inicia una conversación."
 
   constructor(private fetchService:FetchService, private router: Router, private activatedRoute: ActivatedRoute){
 
@@ -48,6 +51,12 @@ export class AppComponent implements OnInit {
 
     else if (window.location.href === 'http://localhost:4200/grupos') {
       this.asideData = "DATOS GRUPOS";
+    }
+
+    
+    else if (window.location.href === 'http://localhost:4200/mensajes') {
+      this.asideData = this.asideMensajes;
+      this.tituloAsideData = "Mensajería"
     }
 
     else {

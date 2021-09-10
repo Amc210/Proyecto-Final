@@ -1,27 +1,124 @@
 /* You can add global styles to this file, and also import other style files */
+/* Estructura */
 html{
     height: 100%;
 }
 
-.bck-col{
-    background-color: #465362;
-}
-
 header{
     color: white;
-    margin: 0 auto;
     padding: 0;
-    height: 120px;
     width: auto;
-}
-
-header > div{
-    vertical-align: middle;
+    margin-top: 14px;
 }
 
 body{
     margin: 0;
     min-height: 100%;
+    background-color: transparent !important;
+}
+
+footer{
+    height: 160px;
+    background-color: #465362;
+    width: 60%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-row{
+
+}
+
+main{
+    width: 100%;
+    min-height: 720px;
+    margin: 0;
+    padding: 2%;
+    background-color: transparent;
+}
+
+aside{
+    background: rgb(44,34,195);
+    background: linear-gradient(0deg, rgba(44,34,195,1) 0%, rgba(4,7,69,0.5270483193277311) 100%);
+    width: 24%;
+    height: auto;
+    border: 4px solid lightblue;
+    border-radius: 12px;
+    margin: 0;
+    margin-top: 10px;
+    padding: 26px;
+    color: white;
+}
+
+nav{
+    height: 100px;
+    vertical-align: middle;
+    background-color: #465362;
+    display: flex;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+
+ul > li{
+    display: inline !important;
+}
+
+/* Listas y menús */
+
+.submenu{
+    display: none;
+}
+
+.submenu:hover{
+    display: block;
+}
+
+/* Botones */
+
+.btn-context{
+    font-family: "Pixeloid";
+    color: black;
+    font-size: 18px;
+    margin-right: 4px;
+}
+
+.btn-green{
+    background-color: lightgreen;
+}
+
+.btn-blue{
+    background-color: lightblue;
+    border: 1px solid blue;
+}
+
+.btn-blue:hover{
+    background-color: darkcyan;
+}
+
+.btn-yellow{
+    background-color: lightyellow;
+    border: 1px solid yellow;
+}
+
+.btn-yellow:hover{
+    background-color: orange;
+}
+
+.btn-red{
+    background-color: palevioletred;
+    border: 1px solid red;
+}
+
+.btn-red:hover{
+    background-color: red;
 }
 
 .btn-nav{
@@ -42,17 +139,17 @@ body{
     content: "►";
 }
 
-._ngcontent-utd-c56:nth-child(2n):hover::before{
-    content: "►";
-    color: white !important;
-}
 
-footer{
-    height: 160px;
-}
+/* Components (Sobretodo centrales)*/
 
-.footer-row{
-    border: 1px solid yellow;
+#profile-container div{
+    float: left;
+    border: 1px solid red;
+    background-image:url("/assets/def/notloggedin.jpg");
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
 }
 
 .comp-container{
@@ -60,7 +157,9 @@ footer{
     padding: 0;
     display: flex;
     align-content: center;
-    align-items: stretch
+    align-items: stretch;
+    background-color: transparent;
+    min-height: 800px;
 }
 
 .component-header{
@@ -82,38 +181,44 @@ footer{
     font-weight: 300;
 }
 
-main{
-    border: 2px solid black;
-    width: 100%;
-    min-height: 720px;
-    margin: 0;
-    padding: 2%;
+/* Tablas */
+
+.table-bck{
+    background: rgb(44,34,195);
+    background: linear-gradient(0deg, rgba(44,34,195,1) 0%, rgba(4,7,69,0.86) 100%);
+    color: white !important;
 }
 
-aside{
-    background-color: #011936;
-    width: 24%;
-    height: auto;
-    border: 2px solid lightblue;
-    margin: 0;
-    padding: 26px;
+#example tr{
     color: white;
 }
 
-nav{
-    height: 100px;
-    vertical-align: middle;
+th{
+    font-family:'Jet-Set' !important;
+    background-color: black !important;
 }
 
-nav a{
-    text-decoration: none;
+td{
+    font-family: 'Modern Sans' !important;
+    font-size: 1.2em;
+}
+
+#tabla-mensajes tr{
+    height: 66px;
+}
+
+/* Paginación */
+
+.fake-pag-box{
+    min-width: 24px;
+    min-height: 24px;
+    font-size: 16px;
     color: white;
-    margin-right: 20px;
+    font-weight: bold;
 }
 
-ul > li{
-    display: inline !important;
-}
+
+/* Fuentes y TIpografía*/
 
 .jetset{
     font-family:'Jet-Set' !important;
@@ -158,6 +263,12 @@ ul > li{
 @font-face {
     font-family: 'Modern Sans';
     src: url("assets/fonts/ModernSans-Light.otf");
+    font-weight: 300;
+}
+
+@font-face{
+    font-family: 'Pixeloid';
+    src: url("assets/fonts/PixeloidMono.ttf");
     font-weight: 300;
 }
 

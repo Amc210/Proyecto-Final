@@ -1,24 +1,27 @@
 <div>
     <br>
 <div class="component-header" style="text-align: center">
-<h2 class="logostile font-lg comp-title">AMIGOS</h2>
+    <div style="background-color: gray; border: 2px solid white; display: inline-block; padding: 20px">
+<h2 class="comp-title" style="font-size: 5em; font-family: Logostile; color: white;   -webkit-text-stroke-width: 2px;
+-webkit-text-stroke-color: black;">AMIGOS</h2>
     <br>
-    <div class="selector-links logostile font-md comp-subtitle"><a>Mis amigos</a> | <a>Añadir amigo</a></div>
+    <div class="selector-links comp-subtitle jetset" style="font-size: 20px" ><a href="#" style="padding: 10px; color: white; text-decoration: none">Mis amigos</a> | <a href="#">Añadir amigo</a></div>
 </div>
-
+</div>
 
 </div>
 <script type="text/javascript">
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable();S
 } );
     </script>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
+<table id="example" class="table table-striped table-bordered table-bck" style="width:100%">
     <thead>
         <tr>
             <th>¿Conectado?</th>
             <th>NickID</th>
             <th>Jugando a...</th>
+            <!-- Fetch de los iconos de los 3 primeros grupos -->
             <!--cambiar por ultima fecha conex-->
             <th>Tiempo de la sesión/Desconectado hace...</th>
             <th>Gestionar</th>
@@ -31,9 +34,9 @@
             <td>Edinburgh</td>
             <td>61</td>
             <td>
-                <button>Mensaje</button>
-                <button>Info</button>
-                <button>Borrar amigo</button></td>
+                <button class="btn-context btn-blue">Mensaje</button>
+                <button class="btn-context btn-yellow">Info</button>
+                <button class="btn-context btn-red">Borrar amigo</button></td>
         </tr>
         <tr>
             <td>Garrett Winters</td>
