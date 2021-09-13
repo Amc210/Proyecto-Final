@@ -15,40 +15,41 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name="usuarios")
+@Table(name = "usuarios")
 public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column (name="id_usuario")
+	@Column(name = "id_usuario")
 	private int id;
-	@Column(name="nick")
+	@Column(name = "nick")
 	private String nick;
-	@Column(name="nombre")
+	@Column(name = "nombre")
 	private String nombre;
-	@Column(name="tipo")
+	@Column(name = "tipo")
 	private int tipo;
-	@Column(name="email")
+	@Column(name = "email")
 	private String email;
-	
+	@Column(name = "password")
+	private String password;
+
 	@OneToMany
-	@JoinColumn(name="id")
+	@JoinColumn(name = "id")
 	private List<Usuario_pertenece_a_grupo> usuario_pertenece_a_grupo;
-	
+
 	@OneToMany
 	@JoinColumn(name = "usuario_agrega_amigos")
 	private List<Agregan> agregan;
-	
+
 	@OneToMany
 	@JoinColumn(name = "mensaje_privado")
 	private List<Mensaje_privado> mensaje_privado;
-	
-	
+
 	// Construcotres
 	public Usuario() {
-		
+
 	}
-	
+
 	public Usuario(int id, String nick, String nombre, int tipo, String email,
 			List<Usuario_pertenece_a_grupo> usuario_pertenece_a_grupo, List<Agregan> agregan,
 			List<Mensaje_privado> mensaje_privado) {
@@ -62,7 +63,7 @@ public class Usuario {
 		this.agregan = agregan;
 		this.mensaje_privado = mensaje_privado;
 	}
-	
+
 	// Getters setters
 	public int getId() {
 		return id;
@@ -104,6 +105,14 @@ public class Usuario {
 		this.email = email;
 	}
 
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Usuario_pertenece_a_grupo")
 	public List<Usuario_pertenece_a_grupo> getUsuario_pertenece_a_grupo() {
@@ -113,6 +122,7 @@ public class Usuario {
 	public void setUsuario_pertenece_a_grupo(List<Usuario_pertenece_a_grupo> usuario_pertenece_a_grupo) {
 		this.usuario_pertenece_a_grupo = usuario_pertenece_a_grupo;
 	}
+
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Agregan")
 	public List<Agregan> getAgregan() {
@@ -122,6 +132,7 @@ public class Usuario {
 	public void setAgregan(List<Agregan> agregan) {
 		this.agregan = agregan;
 	}
+
 	@JsonIgnore
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "Mensaje_privado")
 	public List<Mensaje_privado> getMensaje_privado() {
@@ -131,12 +142,13 @@ public class Usuario {
 	public void setMensaje_privado(List<Mensaje_privado> mensaje_privado) {
 		this.mensaje_privado = mensaje_privado;
 	}
-	
+
 	// ToString
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", nick=" + nick + ", nombre=" + nombre + ", tipo=" + tipo + ", email=" + email
-				+ ", usuario_pertenece_a_grupo=" + usuario_pertenece_a_grupo + ", agregan=" + agregan
-				+ ", mensaje_privado=" + mensaje_privado + "]";
+				+ ", password=" + password + ", usuario_pertenece_a_grupo=" + usuario_pertenece_a_grupo + ", agregan="
+				+ agregan + ", mensaje_privado=" + mensaje_privado + "]";
 	}
+
 }

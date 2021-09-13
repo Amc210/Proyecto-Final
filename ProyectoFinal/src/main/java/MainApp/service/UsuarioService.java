@@ -14,6 +14,11 @@ public class UsuarioService implements IUsuarioService {
 	UsuarioDAO UsuarioDAO;
 	
 	@Override
+	public Usuario listarNick(String nombre) {
+		// TODO Auto-generated method stub
+		return UsuarioDAO.findByNick(nombre);
+	}
+	@Override
 	public List<Usuario> listarUsuarios() {
 		return UsuarioDAO.findAll();
 	}
@@ -22,6 +27,12 @@ public class UsuarioService implements IUsuarioService {
 	public List<Usuario> listarAmigos() {
 		// TODO Auto-generated method stub
 		return UsuarioDAO.findAll();
+	}
+	
+	@Override
+	public Usuario guardarUsuario(Usuario usuario) {
+		// TODO Auto-generated method stub
+		return UsuarioDAO.save(usuario);
 	}
 
 	@Override
