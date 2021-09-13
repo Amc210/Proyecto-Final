@@ -9,8 +9,8 @@
     <title>LFG - Desarrollo</title>
   </head>
   <body class="container-fluid" style="padding: 0; margin: 0">
-    <video class="back-video" autoplay loop muted>
-      <source src="../assets/videos/video3.mp4" type="video/mp4">
+    <video muted autoplay loop class="back-video">
+      <source src="/assets/videos/video3.mp4" type="video/mp4">
     </video>
     <header class="bck-col" style="vertical-align: middle;">
       <div class="row">
@@ -31,17 +31,16 @@
         <div class="col">
           <nav>
             <ul>
-              <li><a href="/inicio"><button class="btn-nav">Inicio</button></a></li>
-              <li><a href="/amigos"><button class="btn-nav">Amigos</button></a></li>
-              <li><a href="/grupos"><button class="btn-nav">Grupos</button></a>
+              <li><button class="btn-nav"><a href="/inicio">Inicio</a></button></li>
+              <li><button class="btn-nav"><a href="/amigos">Amigos</a></button></li>
+              <li><button class="btn-nav"><a href="/grupos">Grupos</a></button>
                 
                 <ul class="submenu">
                   <a href="#">Link 1</a>
                   <a href="#">Link 1</a>
                   <a href="#">Link 1</a>
                 </ul>
-              
-              
+            
               </li>
               <li><a href="/mensajes"><button class="btn-nav">Mensajes</button></a></li>
               <li><a href="/sobre"><button class="btn-nav">Sobre LFG</button></a></li>
@@ -61,9 +60,13 @@
       </aside>
 
     <main *ngIf="!isHomePage()">
+      <video muted autoplay loop>
+        <source src="/assets/videos/video1.mp4" type="video/mp4">
+      </video>
       <router-outlet></router-outlet>
       </main>
       <main *ngIf="isHomePage()" style="padding: 0">
+        
         <router-outlet></router-outlet>
       </main>
     </div>

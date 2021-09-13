@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,6 +11,10 @@ import { MensajesComponent } from './mensajes/mensajes.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { LoginComponent } from './login/login.component';
+import { CrearGruposComponent } from './crear-grupos/crear-grupos.component';
+import { AddAmigoComponent } from './add-amigo/add-amigo.component';
+import { EnviarMensajeComponent } from './mensajes/enviar-mensaje/enviar-mensaje.component';
+import { PerfilUsuarioComponent } from './perfil-usuario/perfil-usuario.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +24,17 @@ import { LoginComponent } from './login/login.component';
     MensajesComponent,
     InicioComponent,
     SobreComponent,
-    LoginComponent
+    LoginComponent,
+    CrearGruposComponent,
+    AddAmigoComponent,
+    EnviarMensajeComponent,
+    PerfilUsuarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

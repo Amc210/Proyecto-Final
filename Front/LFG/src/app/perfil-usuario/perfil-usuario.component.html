@@ -1,0 +1,26 @@
+<div>
+    <br>
+<div class="component-header" style="text-align: center">
+<h2 class="logostile font-lg comp-title">TU PERFIL</h2>
+    <br>
+</div>
+
+</div>
+
+<div id="login-container" style="text-align: center">
+    <!--  *ngIf="isLoggedOn" -->
+<form [formGroup]="outputForm" (ngSubmit)="submitForm()" style="margin-top: 40px">
+<input type="text" id="uname" formControlName="nick">
+<br>
+<input type="text" id="upass" formControlName="nombre">
+<br>
+<input type="text" id="upass" formControlName="tipo">ng ser
+<br>
+<input type="text" id="upass" formControlName="email">
+<br>
+<input type="text" id="upass" formControlName="password">
+<br>
+<input type="submit" value="submit">
+</form>
+</div>
+

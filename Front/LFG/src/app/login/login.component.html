@@ -10,10 +10,10 @@
 
 <div id="login-container" style="text-align: center">
     <!--  *ngIf="isLoggedOn" -->
-    <form style="margin-top: 40px">
-<input type="text" id="uname" name="uname">
+<form [formGroup]="outputForm" (ngSubmit)="submitForm()" style="margin-top: 40px">
+<input type="text" id="uname" formControlName="login">
 <br>
-<input type="text" id="upass" name="upass">
+<input type="text" id="upass" formControlName="pass">
 <br>
 <input type="submit" value="submit">
 </form>

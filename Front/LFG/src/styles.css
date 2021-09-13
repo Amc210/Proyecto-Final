@@ -32,6 +32,7 @@ footer{
 
 }
 
+
 main{
     width: 100%;
     min-height: 720px;
@@ -139,6 +140,14 @@ ul > li{
     content: "►";
 }
 
+.btn-nav:active::before{
+    content: "►";
+}
+
+.btn-nav a:visited{
+    border-bottom: 3px solid black
+}
+
 
 /* Components (Sobretodo centrales)*/
 
@@ -216,7 +225,6 @@ td{
     color: white;
     font-weight: bold;
 }
-
 
 /* Fuentes y TIpografía*/
 
