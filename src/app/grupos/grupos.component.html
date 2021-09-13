@@ -1,0 +1,63 @@
+<div>
+    <br>
+<div class="component-header" style="text-align: center">
+<h2 class="logostile font-lg comp-title">GRUPOS</h2>
+    <br>
+    <div class="selector-links logostile font-md comp-subtitle"><a>Mis grupos</a> | <a>Buscar grupo</a></div>
+</div>
+
+</div>
+
+<div>
+<table class="table table-bck">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#Num. Usuarios</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Juego</th>
+        <th scope="col">Gestionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>
+          <button>Entrar</button>
+          <button>Info</button>
+          <button>Dejar</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- NGFor para pintar los necesarios -->
+<div id="chars-container" *ngFor="let item of arrayGrupos">
+    <div class="char-container">
+    <div>{{item.id}}</div>
+    <div>{{item.nombre}}</div>
+    <img src="{{item.juego[1]}}" />
+    <br>
+    <p></p>
+    <br>
+    <div id="char-name">{{item.name}}</div>
+    <br>
+    <a href="/detalle">MÁS</a>
+    <br>
+</div>
+</div>
