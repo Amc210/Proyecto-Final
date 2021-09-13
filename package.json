@@ -1,14 +1,14 @@
 {
   "name": "package.json",
   "version": "1.0.0",
-  "description": "Proyecto-Final",
+  "description": "Despligue-BackEnd",
   "main": "app.js",
   "scripts": {
     "test": "echo \"\\Error: no test specified\\\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "Proyecto-Final"
+    "url": "Despligue-BackEnd"
   },
   "author": "Anna Marín, Adrián Pobo, Sergio Aragón",
   "license": "ISC"
