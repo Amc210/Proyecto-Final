@@ -1,0 +1,85 @@
+
+
+<div>
+  <br>
+<div class="component-header" style="text-align: center">
+  <div style="background-color: gray; border: 2px solid white; display: inline-block; padding: 20px">
+<h2 class="comp-title" style="font-size: 5em; font-family: Logostile; color: white;   -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black;">GRUPOS</h2>
+  <br>
+  <div class="selector-links comp-subtitle jetset" style="font-size: 20px" ><a href="#" style="padding: 10px; color: white; text-decoration: none">Mis grupos</a> | <a>Buscar grupo</a> | <a>Crear grupo</a></div>
+</div>
+</div>
+
+<div>
+<table class="table table-bck">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" class="col-md-1">Num. Grupo</th>
+        <th scope="col" class="col-md-2">Nombre</th>
+        <th scope="col" class="col-md-1">Creador</th>
+        <th scope="col" class="col-md-2">Juego</th>
+        <th scope="col" class="col-md-2">Descripción</th>
+        <th scope="col" class="col-md-1">Tipo</th>
+        <th scope="col" class="col-md-3">Gestionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" >1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>Tom Clancy's Rainbow Six Siege</td>
+        <td>Muy lejos, más allá de las montañas de palabras. </td>
+        <td>Guerra</td>
+        <td>
+          <button class="btn-context btn-blue">Entrar</button>
+          <button class="btn-context btn-yellow">Info</button>
+          <button class="btn-context btn-red">Dejar</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>GTA V</td>
+        <td></td>
+        <td></td>
+        <td>
+          <button class="btn-context btn-blue">Entrar</button>
+          <button class="btn-context btn-yellow">Info</button>
+          <button class="btn-context btn-red">Dejar</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>NBA 2K22</td>
+        <td></td>
+        <td></td>
+        <td>
+          <button class="btn-context btn-blue">Entrar</button>
+          <button class="btn-context btn-yellow">Info</button>
+          <button class="btn-context btn-red">Dejar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- NGFor para pintar los necesarios -->
+<div id="chars-container" *ngFor="let item of arrayGrupos">
+    <div class="char-container">
+    <div>{{item.id}}</div>
+    <div>{{item.nombre}}</div>
+    <img src="{{item.juego[1]}}" />
+    <br>
+    <p></p>
+    <br>
+    <div id="char-name">{{item.name}}</div>
+    <br>
+    <a href="/detalle">MÁS</a>
+    <br>
+</div>
+</div>

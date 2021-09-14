@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>LFG - Desarrollo</title>
+  </head>
+  <body class="container-fluid" style="padding: 0; margin: 0">
+    <video muted autoplay loop class="back-video">
+      <source src="/assets/videos/video3.mp4" type="video/mp4">
+    </video>
+    <header class="bck-col" style="vertical-align: middle;">
+      <div class="row">
+        <div class="col" style="border: 1px solid yellow; background-color: gray; display: flex">
+          <div id="logo-container" style="padding-right: 10px"><img src="" width="180px" height="96px"></div>
+          <div id="profile-container">
+            <div></div>
+            <span class="jetset" style="padding-left: 10px">Desconectado</span>
+            <br>
+            <a href="/perfil" style="padding-left: 10px"><button class="btn-nav">Perfil</button></a>
+            <a href="/login" style="padding-left: 10px"><button class="btn-nav">Login</button></a>
+          </div>
+
+
+        </div>
+        <div class="col-sm">
+        </div>
+        <div class="col">
+          <nav>
+            <ul class="nav">
+              <li><a class="btn-nav" href="/inicio">Inicio</a></li>
+              <li><a class="btn-nav" href="/amigos">Amigos</a>  </li>
+              <li><a class="btn-nav" href="/grupos">Grupos</a></li>
+              <li><a class="btn-nav" href="/mensajes">Mensajes</a></li>
+              <li><a class="btn-nav" href="/sobre">Sobre LFG</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <div class="comp-container">
+    <aside class="logostile font-sm" *ngIf="!isHomePage()">
+      <h3>{{tituloAsideData}}</h3>
+      <p class="comp-text">{{asideData}}</p>
+      <div class="cont-inyectado">
+        Contenido inyectado:
+      </div>
+      </aside>
+
+    <main *ngIf="!isHomePage()">
+
+      <router-outlet></router-outlet>
+      </main>
+      <main *ngIf="isHomePage()" style="padding: 0">
+
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+    <footer class="jetset" style="font-size: 22px; text-align: center; border: 2px solid black">
+      <div class="row footer-row" style="color: white">
+        <div class="col">LFG - Team 1<br><span style="font-family: Modern Sans">Adrián Pobo, Anna Marín, Sergio Aragón - 2021</span></div>
+      </div>
+      </footer>
+  </body>
+</html>
