@@ -24,6 +24,8 @@ public class GrupoController {
 	 * obtener numero usuarios por grupos
 	 *  obtener los grupos de tu usuario
 	 *  SACAR TODOS LOS JUEGOS para poder buscar entre los existentes
+	 *  LISTAR LOS USUARIOS DEL GRUPO
+	 *  LISTAR LOS GRUPOS A LOS QUE TÚ PERTENECES (ID USUARIO LOGUEADO)
 	 *  */
 
 	@Autowired
@@ -33,10 +35,12 @@ public class GrupoController {
 	public List<Grupo> listarNombre(@PathVariable(name="nombre") String nombre) {
 	    return grupoService.listarNombre(nombre);
 	}
+	
 	@GetMapping("/grupos/juego/{juego}")
 	public List<Grupo> listarJuego(@PathVariable(name="juego") String juego) {
 	    return grupoService.listarNombre(juego);
 	}
+
 	
 	@GetMapping("/grupos")
 	public List<Grupo> listarGrupos(){
