@@ -7,7 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { InicioComponent } from './inicio/inicio.component';
+import { UserbarComponent } from './userbar/userbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+
 import { SobreComponent } from './sobre/sobre.component';
 
 import { AutenticacionComponent } from './autenticacion/autenticacion.component';
@@ -20,19 +22,14 @@ import { VerAmigosComponent } from './amigos/ver-amigos/ver-amigos.component';
 
 import { GruposComponent } from './grupos/grupos.component';
 import { VerGruposComponent } from './grupos/ver-grupos/ver-grupos.component';
+import { MisGruposComponent } from './grupos/mis-grupos/mis-grupos.component';
+import { BuscarGrupoComponent } from './grupos/buscar-grupo/buscar-grupo.component';
 import { CrearGrupoComponent } from './grupos/crear-grupo/crear-grupo.component';
 
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { EnviarMensajeComponent } from './mensajes/enviar-mensaje/enviar-mensaje.component';
-
-import { TestpadreComponent } from './testpadre/testpadre.component';
-import { TesthijoComponent } from './testhijo/testhijo.component';
-import { Testhijo2Component } from './testhijo2/testhijo2.component';
 import { VerMensajesComponent } from './mensajes/ver-mensajes/ver-mensajes.component';
 import { DetalleMensajeComponent } from './mensajes/detalle-mensaje/detalle-mensaje.component';
-import { UserbarComponent } from './userbar/userbar.component';
-import { MisGruposComponent } from './grupos/mis-grupos/mis-grupos.component';
-import { BuscarGrupoComponent } from './grupos/buscar-grupo/buscar-grupo.component';
 
 @NgModule({
   declarations: [
@@ -49,10 +46,7 @@ import { BuscarGrupoComponent } from './grupos/buscar-grupo/buscar-grupo.compone
     VerAmigosComponent,
     EnviarMensajeComponent,
     PerfilUsuarioComponent,
-    TestpadreComponent,
-    TesthijoComponent,
     NavbarComponent,
-    Testhijo2Component,
     VerMensajesComponent,
     DetalleMensajeComponent,
     AutenticacionComponent,

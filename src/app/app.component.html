@@ -42,6 +42,7 @@
       <p class="comp-text">{{asideData}}</p>
       <div class="cont-inyectado">
         Contenido inyectado:
+        <div *ngFor="let item of arrayData">{{item.id}}</div>
       </div>
       </aside>
 
@@ -50,7 +51,7 @@
       <router-outlet></router-outlet>
       </main>
       <main *ngIf="isHomePage()" style="padding: 0">
-        <router-outlet></router-outlet>
+        <app-inicio></app-inicio>
       </main>
     </div> <!-- Fin comp container -->
 

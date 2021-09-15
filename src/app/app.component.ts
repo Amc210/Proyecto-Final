@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FetchService } from './fetch.service';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { TwitchFetchService } from './twitch-fetch.service';
 
 
 @Component({
@@ -12,27 +13,29 @@ import { filter } from 'rxjs/operators';
 
 export class AppComponent implements OnInit {
 
-  nombreUsuario:string = '';
   title = 'LFG';
-  currentRoute:string = "";
-  routeHome:boolean = false;
+  nombreUsuarioActual:string = 'testUser';
   isLoggedIn:boolean = false;
-
+  rutaActual:string = "";
   tituloAsideData:string = "";
   asideData:string = "";
 
+  twitchData:any;
+  arrayData:Array<any> = new Array();
+  twitchDataArray:Array<any> = new Array();
+
   asideMensajes:string = "Puedes enviar mensajes a tus contactos para organizar grupos o charlar. Gestiona tus mensajes o inicia una conversación."
 
-  constructor(private fetchService:FetchService, private router: Router, private activatedRoute: ActivatedRoute){
-
-  }
-
-  checkLogin(): boolean{
-    return true;
-  }
+  constructor(
+    private fetchService:FetchService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private twitchFetchService:TwitchFetchService
+    ){}
 
   isHomePage(): boolean{
-    if (window.location.href === 'http://localhost:4200/inicio'){
+
+    if (window.location.href === window.location.origin+'/inicio' || window.location.href === window.location.origin+'/'){
       return true;
     }
 
@@ -40,7 +43,6 @@ export class AppComponent implements OnInit {
       return false;
     }
 
-    return false;
   }
 
   checkLocation(){
@@ -48,11 +50,11 @@ export class AppComponent implements OnInit {
     // TODO: Cambia títulos, modificar y fusionar con los components
 
     if (window.location.href === window.location.origin+'/amigos'){
-      this.asideData = "DATOS AMIGOS"
+      this.asideData = "Gestionar amigos"
     }
 
     else if (window.location.href === window.location.origin+'/grupos') {
-      this.asideData = "DATOS GRUPOS";
+      this.asideData = "Gestionar grupos";
     }
 
     
@@ -62,7 +64,7 @@ export class AppComponent implements OnInit {
     }
 
     else {
-      this.asideData = "xd";
+      this.asideData = "Aside";
     }
 
 
@@ -72,7 +74,7 @@ export class AppComponent implements OnInit {
 
     console.log("Url actual: " + window.location.href);
     console.log("Ruta actual: " + this.router.url);
-    console.log("¿Estamos en la home? " + this.routeHome);
+    console.log("¿Estamos en la home? " + this.isHomePage());
     console.log("Ruta comp: " + window.location.origin+"/mensajes");
     this.checkLocation();
 
@@ -80,10 +82,33 @@ export class AppComponent implements OnInit {
 
     if (this.isLoggedIn) {
       const user = this.fetchService.obtenerUsuarioToken();
-      this.nombreUsuario = user.username;
+      this.nombreUsuarioActual = user.username;
+    }
+
+    // this.twitchFetchService.enviarDatos().subscribe(
+    //   result=>{
+    //     console.log(result);
+    //   }
+    // )
+
+    this.twitchFetchService.obtenerDatos("juegos").subscribe(
+        result => {
+          console.log(result);
+          this.twitchData = result;
+          this.arrayData = this.twitchData;
+          console.log("MI ARRAYDATA: " + this.arrayData)
+          //this.twitchDataArray = this.twitchData.value;
+          console.log(this.twitchData);
+          return result;
+        },
+        error => {
+          console.log("Problemas...");
+        }
+      )
+
     }
 
 
   }
 
-}
+

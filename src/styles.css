@@ -166,7 +166,6 @@ ul > li{
     border-bottom: 3px solid black
 }
 
-
 /* ESTRUCTURA COMPONENTS - SOBRETODO PADRE-HIJOS QUE VAN EN EL TAG MAIN*/
 
 /* RELACIONADOS OTRAS PARTES */
@@ -174,6 +173,9 @@ ul > li{
 /* Logueado - no Logueado */
 
 #logo-container{
+    border: 2px solid blue;
+    width: 180px;
+    height: 96px;
     padding-right: 10px;
 }
 
