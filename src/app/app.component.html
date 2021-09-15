@@ -42,7 +42,10 @@
       <p class="comp-text">{{asideData}}</p>
       <div class="cont-inyectado">
         Contenido inyectado:
-        <div *ngFor="let item of arrayData">{{item.id}}</div>
+        <div *ngFor="let item of twitchDataArray">
+          <div>{{item.name}}</div>
+          <div><img src="{{item.box_art_url}}"></div>
+        </div>
       </div>
       </aside>
 

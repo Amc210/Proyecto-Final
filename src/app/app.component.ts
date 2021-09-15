@@ -92,14 +92,16 @@ export class AppComponent implements OnInit {
     // )
 
     this.twitchFetchService.obtenerDatos("juegos").subscribe(
-        result => {
-          console.log(result);
-          this.twitchData = result;
-          this.arrayData = this.twitchData;
+        data => {
+          console.log(data);
+          console.log("typeof: " + typeof data);
+          this.twitchData = data;
+          this.arrayData = Object.keys(this.twitchData).map(key => ({type: key, value: this.twitchData[key]}));
+          this.twitchDataArray = this.arrayData[0].value;
           console.log("MI ARRAYDATA: " + this.arrayData)
           //this.twitchDataArray = this.twitchData.value;
           console.log(this.twitchData);
-          return result;
+          return data;
         },
         error => {
           console.log("Problemas...");
