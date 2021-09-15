@@ -17,6 +17,14 @@ import MainApp.service.GrupoService;
 @RestController
 @RequestMapping("/api")
 public class GrupoController {
+	
+	/* ENDPOINTS FALTANTES 
+	 * AÑADIDO: VER TODOS LOS GRUPOS (SERGIO)
+	 * 
+	 * obtener numero usuarios por grupos
+	 *  obtener los grupos de tu usuario
+	 *  SACAR TODOS LOS JUEGOS para poder buscar entre los existentes
+	 *  */
 
 	@Autowired
 	GrupoService grupoService;
@@ -29,6 +37,12 @@ public class GrupoController {
 	public List<Grupo> listarJuego(@PathVariable(name="juego") String juego) {
 	    return grupoService.listarNombre(juego);
 	}
+	
+	@GetMapping("/grupos")
+	public List<Grupo> listarGrupos(){
+		return grupoService.listarGrupos();
+	}
+	
 	@PostMapping("/grupos")
 	public Grupo crearGrupo(@RequestBody Grupo grupo) {
 		return grupoService.crearGrupo(grupo);

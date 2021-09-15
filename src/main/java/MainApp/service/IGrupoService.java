@@ -10,4 +10,5 @@ public interface IGrupoService {
 	public List<Grupo> listarJuego(String juego);//Listar Grupos por campo juego
 	public Grupo crearGrupo(Grupo grupo);
 	public void deleteGrupo(Integer id);
+	public List<Grupo> listarGrupos();
 }

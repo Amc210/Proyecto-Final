@@ -38,4 +38,10 @@ public class GrupoService implements IGrupoService{
 		GrupoDAO.deleteById(id);
 	}
 
+	@Override
+	public List<Grupo> listarGrupos() {
+		// TODO Auto-generated method stub
+		return GrupoDAO.findAll();
+	}
+
 }
