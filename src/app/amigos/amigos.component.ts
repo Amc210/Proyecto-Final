@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmigosComponent implements OnInit {
 
+  opcionElegida: number = 1;
+
+  verContenido(){
+    this.opcionElegida = 1;
+  }
+
+  addContenido(){
+    this.opcionElegida = 2;
+  }
+
+  verDetalle(){
+    this.opcionElegida = 3;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

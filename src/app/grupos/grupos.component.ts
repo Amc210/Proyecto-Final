@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchService } from '../fetch.service';
 
 @Component({
   selector: 'app-grupos',
@@ -8,31 +7,27 @@ import { FetchService } from '../fetch.service';
 })
 export class GruposComponent implements OnInit {
 
-  title:string = 'Grupos';
+  titulo:string = 'Grupos';
   desc:string = 'Crea un grupo para jugar o gestiona tus grupos';
 
-  listaGrupos:any;
-  arrayGrupos:Array<any> = new Array();
-  grupos:any;
+  opcionElegida: number = 1;
 
-  constructor(private fetchService:FetchService) { }
-
-  ngOnInit(): void {
-
-    this.fetchService.obtenerDatos("grupos").subscribe(
-      result => {
-        this.grupos = result;
-        this.listaGrupos = Object.keys(this.grupos).map(key => ({type: key, value: this.grupos[key]}));
-        this.arrayGrupos = this.arrayGrupos[1].value;
-        console.log(this.grupos);
-        return this.arrayGrupos;
-      },
-      error => {
-        console.log("Problemas...");
-      }
-    )
-
+  misGrupos(){
+    this.opcionElegida = 1;
   }
 
+  verGrupos(){
+    this.opcionElegida = 2;
+  }
+
+  buscarGrupo(){
+    this.opcionElegida = 2;
+  }
+
+  constructor(){}
+
+  ngOnInit(){
+
+  }
 
 }

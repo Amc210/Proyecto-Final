@@ -8,50 +8,32 @@
 
     <title>LFG - Desarrollo</title>
   </head>
+  <video muted autoplay loop class="back-video">
+    <source src="/assets/videos/video1.mp4" type="video/mp4">
+  </video>
   <body class="container-fluid" style="padding: 0; margin: 0">
-    <video class="back-video" autoplay loop muted>
-      <source src="../assets/videos/video3.mp4" type="video/mp4">
-    </video>
-    <header class="bck-col" style="vertical-align: middle;">
-      <div class="row">
-        <div class="col" style="border: 1px solid yellow; background-color: gray; display: flex">
-          <div id="logo-container" style="padding-right: 10px"><img src="" width="180px" height="96px"></div>
-          <div id="profile-container">
-            <div></div>
-            <span class="jetset" style="padding-left: 10px">Desconectado</span>
-            <br>
-            <a href="/perfil" style="padding-left: 10px"><button class="btn-nav">Perfil</button></a>
-            <a href="/login" style="padding-left: 10px"><button class="btn-nav">Login</button></a>
-          </div>
-          
 
+    <header class="bck-col">
+
+      <div class="row">
+
+        <div class="col col-login">
+          <app-userbar></app-userbar>
         </div>
+
         <div class="col-sm">
         </div>
-        <div class="col">
-          <nav>
-            <ul>
-              <li><a href="/inicio"><button class="btn-nav">Inicio</button></a></li>
-              <li><a href="/amigos"><button class="btn-nav">Amigos</button></a></li>
-              <li><a href="/grupos"><button class="btn-nav">Grupos</button></a>
-                
-                <ul class="submenu">
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 1</a>
-                  <a href="#">Link 1</a>
-                </ul>
-              
-              
-              </li>
-              <li><a href="/mensajes"><button class="btn-nav">Mensajes</button></a></li>
-              <li><a href="/sobre"><button class="btn-nav">Sobre LFG</button></a></li>
 
-            </ul>
-          </nav>
+        <div class="col">
+         <app-navbar></app-navbar>
         </div>
+
       </div>
     </header>
+
     <div class="comp-container">
+      <!-- Controlar que salga el aside dependiendo de la pag -->
+      <!-- Quitarlo en HOME, en Sobre etc-->
     <aside class="logostile font-sm" *ngIf="!isHomePage()">
       <h3>{{tituloAsideData}}</h3>
       <p class="comp-text">{{asideData}}</p>
@@ -60,16 +42,18 @@
       </div>
       </aside>
 
+<!-- Fix para las diferencias cuando no hay navbar -->
     <main *ngIf="!isHomePage()">
       <router-outlet></router-outlet>
       </main>
       <main *ngIf="isHomePage()" style="padding: 0">
         <router-outlet></router-outlet>
       </main>
-    </div>
-    <footer class="jetset" style="font-size: 22px; text-align: center; border: 2px solid black">
+    </div> <!-- Fin comp container -->
+
+    <footer class="jetset">
       <div class="row footer-row" style="color: white">
-        <div class="col">LFG - Team 1<br><span style="font-family: Modern Sans">Adrián Pobo, Anna Marín, Sergio Aragón - 2021</span></div>
+        <div class="col">LFG<br><span style="font-family: Modern Sans">Team 1: Adrián Pobo, Anna Marín, Sergio Aragón - 2021</span></div>
       </div>
       </footer>
   </body>

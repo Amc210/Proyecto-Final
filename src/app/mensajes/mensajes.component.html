@@ -1,63 +1,14 @@
-<div>
-    <br>
-<div class="component-header" style="text-align: center">
-<h2 class="logostile font-lg comp-title">MENSAJES</h2>
-    <br>
-    <div class="selector-links logostile font-md comp-subtitle"><a>Mis mensajes</a> | <a>Enviar mensaje</a></div>
+<div class="cp-parent-container">
+  <div class="cp-parent-header">
+<h2 class="cp-title" >{{titulo}}</h2>
+  <br>
+  <div class="cp-selection">
+      <button (click)="verContenido()">Mis mensajes</button> | 
+      <button (click)="addContenido()">Enviar mensaje</button>
+  </div>
+  </div>
 </div>
 
-</div>
-
-<div id="tabla-mensajes">
-    <table class="table table-bck">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">ID_REMITENTE</th>
-            <!-- Llamar a PIPE para cambiar parte del mensaje -->
-            <th scope="col">Contenido</th>
-            <th scope="col">¿CONECTADO?</th>
-            <th scope="col">Gestionar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>
-              <button>Entrar</button>
-              <button>Info</button>
-              <button>Dejar</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-<div style="text-align: center; margin: 0 auto">
-    <div class="paginacion-tras-tabla" style="border: 1px solid red; margin: 0 auto; background-color: gray; display: inline-block">
-<div id="fake-pag-container" style="display: flex">
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    <div class="fake-pag-box"><a href="#">1</a></div>
-    
-
-
-</div>
-    </div>
-</div>
+<app-ver-mensajes *ngIf="opcionElegida == 1"></app-ver-mensajes>
+<app-enviar-mensaje *ngIf="opcionElegida == 2"></app-enviar-mensaje>
+<app-detalle-mensaje *ngIf="opcionElegida == 3"></app-detalle-mensaje>

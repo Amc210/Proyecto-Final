@@ -1,5 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+const API_URL = 'http://localhost:8181/api/';
+const TOKEN_KEY = 'auth-token';
+const USER_KEY = 'auth-user';
+
+const httpOptions = {
+  headers: new HttpHeaders(
+    {
+      'Content-Type': 'application/json'
+    }
+)};
 
 @Injectable({
   providedIn: 'root'
@@ -7,40 +19,111 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export class FetchService {
 
-  obtenerDatos(tipo:string) {
+  authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2NzE5NDksImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTM1OTQ5fQ.VAchJQ1bz7ZNC5VBFM9f_ZQx4KoN4j_nQnZpJaIXz07D_hKia-4GtduzX3GqnAvEttOBVuHW4NbuBBsvagdGgw";
 
-    let auth_token:string = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiZXhwIjoxNjMxMjAyOTQ2fQ.XuBsGZWYqrhA6-0wkWi383cFWO76ypOQlAkBxD8CCye-wDXyWt0cMHj70rXM07NmUqbWoKHUChFtqM_im9JKOg";
+  constructor(private http: HttpClient) {}
+
+  // Almacena el bearer token, indica que estamos logueados
+  loguear(user:string, password:string): Observable<any>{
+    return this.http.post(API_URL + "login", {
+      user,
+      password
+    }, httpOptions);
+  }
+
+  desloguear(): void{
+    window.sessionStorage.clear();
+  }
+
+  public guardarToken(token: string): void {
+    window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.setItem(TOKEN_KEY, token);
+  }
+
+  public obtenerToken(): string | null {
+    return window.sessionStorage.getItem(TOKEN_KEY);
+  }
+
+  public guardarUsuarioToken(user: any) {
+    window.sessionStorage.removeItem(USER_KEY);
+    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user));
+  }
+
+  public obtenerUsuarioToken(): any{
+    const user = window.sessionStorage.getItem(USER_KEY);
+    if (user) {
+      return JSON.parse(user);
+    }
+
+    return {};
+
+  }
+
+  // 
+  registrar(user:string, email: string, password:string): Observable<any>{
+    return this.http.post(API_URL + "login", {
+      user,
+      email,
+      password
+    }, httpOptions);
+  }
+  
+  enviarDatos(tipo:string, object:any){
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + auth_token + ''
+      'Authorization': 'Bearer ' + this.authToken + ''
     })
-
-    let url ="http://localhost:8181/api/";
-
-    if (tipo == "root") {
-      return this.http.get(url);
+    
+    if (tipo == 'login'){
+      return this.http.post(API_URL + "login/", object);
     }
 
-    if (tipo == "grupos") {
-      return this.http.get(url + "grupos/nombre/grupo%20test", {headers: headers});
+    if (tipo == 'grupos'){
+      return this.http.post(API_URL + "grupos/", object);
     }
 
-    if (tipo == "mensajes") {
-      return this.http.get(url + "mensajes/");
-    }
-
-    if (tipo == "amigos") {
-      return this.http.get(url + "amigos/");
+    if (tipo == 'amigos'){
+      return this.http.post(API_URL + "juegos/", object);
     }
 
     else {
-      return this.http.get(url);
+      console.log("Error en los datos del post");
+      return 0;
+
     }
 
   }
 
-  constructor(private http: HttpClient) { 
+  obtenerDatos(tipo:string) {
+
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + this.authToken + ''
+    })
+
+    if (tipo == "root") {
+      return this.http.get(API_URL);
+    }
+
+    if (tipo == "grupos") {
+      return this.http.get(API_URL + "grupos/nombre/", {headers: headers});
+    }
+
+    if (tipo == "mensajes") {
+      return this.http.get(API_URL + "mensajes/");
+    }
+
+    if (tipo == "amigos") {
+      return this.http.get(API_URL + "amigos/");
+    }
+
+    else {
+      return this.http.get(API_URL);
+    }
+
   }
+
+
   
 }

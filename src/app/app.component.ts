@@ -12,11 +12,11 @@ import { filter } from 'rxjs/operators';
 
 export class AppComponent implements OnInit {
 
+  nombreUsuario:string = '';
   title = 'LFG';
-
   currentRoute:string = "";
-
   routeHome:boolean = false;
+  isLoggedIn:boolean = false;
 
   tituloAsideData:string = "";
   asideData:string = "";
@@ -71,6 +71,15 @@ export class AppComponent implements OnInit {
     console.log(window.location.href);
     console.log("Ruta " + this.routeHome);
     this.checkLocation();
+
+    this.isLoggedIn = !!this.fetchService.obtenerToken();
+
+    if (this.isLoggedIn) {
+      const user = this.fetchService.obtenerUsuarioToken();
+      this.nombreUsuario = user.username;
+    }
+
+
   }
 
 }
