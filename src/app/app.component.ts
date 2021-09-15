@@ -45,16 +45,16 @@ export class AppComponent implements OnInit {
 
   checkLocation(){
 
-    if (window.location.href === '/amigos'){
+    if (window.location.href === window.location.origin+'/amigos'){
       this.asideData = "DATOS AMIGOS"
     }
 
-    else if (window.location.href === '/grupos') {
+    else if (window.location.href === window.location.origin+'/grupos') {
       this.asideData = "DATOS GRUPOS";
     }
 
     
-    else if (window.location.href === '/mensajes') {
+    else if (window.location.href === window.location.origin+'/mensajes') {
       this.asideData = this.asideMensajes;
       this.tituloAsideData = "Mensajería"
     }
