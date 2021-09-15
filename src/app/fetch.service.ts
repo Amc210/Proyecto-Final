@@ -2,13 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-<<<<<<< HEAD
 //const API_URL = 
 //const API_URL = 'http://localhost:8181/api/';
 const API_URL = "https://trabajo-final01.herokuapp.com/api/";
-=======
-const API_URL = 'https://trabajo-final01.herokuapp.com/api/';
->>>>>>> 2d8fb29e0624322a9b3ef55ad996b7474a78b779
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
 
@@ -74,28 +70,24 @@ export class FetchService {
     }, httpOptions);
   }
   
-  enviarDatos(tipo:string, object:any){
+  enviarDatos(tipo:string, object:any): Observable<any>{
 
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + this.authToken + ''
     })
-    
-    if (tipo == 'login'){
-      return this.http.post(API_URL + "login/", object);
-    }
 
     if (tipo == 'grupos'){
-      return this.http.post(API_URL + "grupos/", object);
+      return this.http.post(API_URL + "grupos/", object, {headers: headers});
     }
 
     if (tipo == 'amigos'){
-      return this.http.post(API_URL + "juegos/", object);
+      return this.http.post(API_URL + "grupos/", object, {headers: headers});
     }
 
     else {
       console.log("Error en los datos del post");
-      return 0;
+      return this.http.get(API_URL);
 
     }
 

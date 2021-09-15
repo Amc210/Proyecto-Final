@@ -45,16 +45,16 @@ export class AppComponent implements OnInit {
 
   checkLocation(){
 
-    if (window.location.href === 'http://localhost:4200/amigos'){
+    if (window.location.href === '/amigos'){
       this.asideData = "DATOS AMIGOS"
     }
 
-    else if (window.location.href === 'http://localhost:4200/grupos') {
+    else if (window.location.href === '/grupos') {
       this.asideData = "DATOS GRUPOS";
     }
 
     
-    else if (window.location.href === 'http://localhost:4200/mensajes') {
+    else if (window.location.href === '/mensajes') {
       this.asideData = this.asideMensajes;
       this.tituloAsideData = "Mensajería"
     }
@@ -69,7 +69,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
 
     console.log(window.location.href);
-    console.log("Ruta " + this.routeHome);
+    console.log("Ruta actual: " + this.router.url);
+    console.log("¿Estamos en la home? " + this.routeHome);
     this.checkLocation();
 
     this.isLoggedIn = !!this.fetchService.obtenerToken();

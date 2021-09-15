@@ -1,13 +1,24 @@
 <div id="login-container" style="text-align: center">
     <!--  *ngIf="isLoggedOn" -->
+    <h2>CREA UN GRUPO</h2>
 <form [formGroup]="outputForm" (ngSubmit)="submitForm()" style="margin-top: 40px">
-<input type="text" id="uname" formControlName="nombre">
+    <span>NOMBRE DEL GRUPO:</span>
+<input type="text" id="uame" formControlName="nombre">
 <br>
-<input type="text" id="upass" formControlName="creador">
+<span>CREADOR??</span>
+<input type="text" id="uame" formControlName="creador">
 <br>
-<input type="text" id="upass" formControlName="juego">
+<span>ELIGE JUEGO:</span>
+<select name="juego" id="juego" formControlname="juego">
+    <option value="rigatoni">Rigatoni</option>
+<option value="dave">Dave</option>
+<option value="pumpernickel">Pumpernickel</option>
+<option value="reeses">Reeses</option>
+    </select>
 <br>
-<input type="submit" value="submit">
+
+<button type="submit" value="submit">AGREGAR</button>
+<div id="vacio-respuesta"></div>
 </form>
 </div>
 

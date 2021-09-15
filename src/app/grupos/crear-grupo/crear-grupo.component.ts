@@ -9,11 +9,11 @@ import { FetchService } from '../../fetch.service';
 })
 export class CrearGrupoComponent implements OnInit {
 
-  isLoggedIn:boolean = false;
   outputForm:FormGroup;
   login:string = '';
   pass:string = '';
   juego:number = 0;
+  data:any;
 
   constructor(private formBuilder: FormBuilder, private fetchService: FetchService) {   
     this.outputForm = formBuilder.group(
@@ -25,10 +25,17 @@ export class CrearGrupoComponent implements OnInit {
   );
 }
 
-  submitForm(){
-    console.log(JSON.stringify(this.outputForm.value));
-    this.fetchService.enviarDatos('grupos', JSON.stringify(this.outputForm.value));
-  }
+submitForm(){
+  console.log(this.outputForm.value);
+  this.fetchService.enviarDatos("grupos", this.outputForm.value).subscribe(
+    data => {
+      console.log(data);
+      this.data = data;
+    },
+    error => {
+      console.log("Problemas...");
+    });
+}
 
   ngOnInit(): void {
   }
