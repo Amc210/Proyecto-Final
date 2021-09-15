@@ -106,8 +106,12 @@ export class FetchService {
       return this.http.get(API_URL);
     }
 
-    if (tipo == "grupos") {
+    if (tipo == "gruposxnombre") {
       return this.http.get(API_URL + "grupos/nombre/", {headers: headers});
+    }
+
+    if (tipo == "grupos") {
+      return this.http.get(API_URL + "grupos/", {headers: headers});
     }
 
     if (tipo == "mensajes") {

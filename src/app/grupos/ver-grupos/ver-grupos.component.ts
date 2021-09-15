@@ -8,10 +8,10 @@ import { FetchService } from '../../fetch.service';
 })
 export class VerGruposComponent implements OnInit {
 
-
   listaGrupos:any;
   arrayGrupos:Array<any> = new Array();
   grupos:any;
+  getData:any;
 
   constructor(private fetchService:FetchService) { }
 
@@ -19,11 +19,15 @@ export class VerGruposComponent implements OnInit {
 
     this.fetchService.obtenerDatos("grupos").subscribe(
       result => {
-        this.grupos = result;
-        this.listaGrupos = Object.keys(this.grupos).map(key => ({type: key, value: this.grupos[key]}));
-        this.arrayGrupos = this.arrayGrupos[1].value;
-        console.log(this.grupos);
-        return this.arrayGrupos;
+        console.log(result);
+        this.getData = result;
+        return result;
+       // console.log(this.arrayGrupos);
+        // this.grupos = result;
+        // this.listaGrupos = Object.keys(this.grupos).map(key => ({type: key, value: this.grupos[key]}));
+        // this.arrayGrupos = this.arrayGrupos[0].value;
+        // console.log(this.grupos);
+        // return this.arrayGrupos;
       },
       error => {
         console.log("Problemas...");

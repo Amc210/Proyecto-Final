@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutenticacionComponent implements OnInit {
 
-  titulo:string = "";
+  titulo:string = "Entrar";
   desc:string = "";
 
   opcionElegida: number = 1;

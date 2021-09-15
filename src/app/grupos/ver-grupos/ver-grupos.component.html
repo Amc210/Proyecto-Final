@@ -5,50 +5,40 @@
           <tr>
             <th scope="col">#Num. Usuarios</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Creador</th>
             <th scope="col">Juego</th>
             <th scope="col">Gestionar</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
+            <th scope="row">{{getData[0].id}}</th>
+            <td>{{getData[0].nombre}}</td>
+            <td>{{getData[0].creador}}</td>
+            <td>{{getData[0].juego.nombre}}<img width="64px" style="margin-left: 4px; border: 2px solid black" src="../../assets/img-juegos/{{getData[0].juego.imagen}}"></td>
             <td>
               <button>Entrar</button>
               <button>Info</button>
               <button>Dejar</button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
         </tbody>
       </table>
     </div>
     
-    
-    <!-- NGFor para pintar los necesarios -->
-    <div id="chars-container" *ngFor="let item of arrayGrupos">
+
+  <!--   NGFor para pintar los necesarios -->
+ <div id="chars-container" *ngFor="let item of arrayGrupos">
         <div class="char-container">
-        <div>{{item.id}}</div>
-        <div>{{item.nombre}}</div>
-        <img src="{{item.juego[1]}}" />
-        <br>
-        <p></p>
-        <br>
-        <div id="char-name">{{item.name}}</div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <img src="{{item[1]}}" /> 
         <br>
         <a href="/detalle">MÁS</a>
         <br>
+    </div> 
     </div>
-    </div>
+
+

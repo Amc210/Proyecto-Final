@@ -21,7 +21,11 @@ export class GruposComponent implements OnInit {
   }
 
   buscarGrupo(){
-    this.opcionElegida = 2;
+    this.opcionElegida = 3;
+  }
+
+  crearGrupo(){
+    this.opcionElegida = 4;
   }
 
   constructor(){}

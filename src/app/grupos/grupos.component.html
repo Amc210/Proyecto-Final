@@ -6,10 +6,12 @@
       <button (click)="misGrupos()">Mis grupos</button> | 
       <button (click)="verGrupos()">Ver grupos</button> | 
       <button (click)="buscarGrupo()">Buscar grupo</button> | 
-      <button (click)="buscarGrupo()">Buscar por juego</button>
+      <button (click)="crearGrupo()">Crear grupo</button>
   </div>
   </div>
 </div>
 
-<app-ver-grupos *ngIf="opcionElegida == 1"></app-ver-grupos>
-<app-crear-grupo *ngIf="opcionElegida == 2"></app-crear-grupo>
+<app-mis-grupos *ngIf="opcionElegida == 1"></app-mis-grupos>
+<app-ver-grupos *ngIf="opcionElegida == 2"></app-ver-grupos>
+<app-buscar-grupo *ngIf="opcionElegida == 3"></app-buscar-grupo>
+<app-crear-grupo *ngIf="opcionElegida == 4"></app-crear-grupo>

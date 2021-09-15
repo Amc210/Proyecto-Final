@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AmigosComponent implements OnInit {
 
+  titulo:string = "Amigos";
+  desc:string= "";
   opcionElegida: number = 1;
 
   verContenido(){
@@ -24,6 +26,9 @@ export class AmigosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  this.desc = "Agrega a gente con tus mismos gustos y aficiones, compañeros de equipo con los que has tenido una buena partida o futuros compañeros para nuevos grupos o proyectos."
+
   }
 
 }

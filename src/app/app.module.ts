@@ -31,6 +31,8 @@ import { Testhijo2Component } from './testhijo2/testhijo2.component';
 import { VerMensajesComponent } from './mensajes/ver-mensajes/ver-mensajes.component';
 import { DetalleMensajeComponent } from './mensajes/detalle-mensaje/detalle-mensaje.component';
 import { UserbarComponent } from './userbar/userbar.component';
+import { MisGruposComponent } from './grupos/mis-grupos/mis-grupos.component';
+import { BuscarGrupoComponent } from './grupos/buscar-grupo/buscar-grupo.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { UserbarComponent } from './userbar/userbar.component';
     VerMensajesComponent,
     DetalleMensajeComponent,
     AutenticacionComponent,
-    UserbarComponent
+    UserbarComponent,
+    MisGruposComponent,
+    BuscarGrupoComponent
   ],
   imports: [
     BrowserModule,
