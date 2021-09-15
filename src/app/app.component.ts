@@ -14,6 +14,7 @@ import { TwitchFetchService } from './twitch-fetch.service';
 export class AppComponent implements OnInit {
 
   title = 'LFG';
+  imgUrl: string='';
   nombreUsuarioActual:string = 'testUser';
   isLoggedIn:boolean = false;
   rutaActual:string = "";
@@ -43,6 +44,14 @@ export class AppComponent implements OnInit {
       return false;
     }
 
+  }
+
+  removeEnd(str:string): string{
+    return str.substring(str.length-5);
+  }
+
+  concat(str:string): string{
+    return str.concat("{TESTT}");
   }
 
   checkLocation(){
@@ -90,6 +99,8 @@ export class AppComponent implements OnInit {
     //     console.log(result);
     //   }
     // )
+
+
 
     this.twitchFetchService.obtenerDatos("juegos").subscribe(
         data => {

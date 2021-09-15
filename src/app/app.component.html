@@ -42,11 +42,16 @@
       <p class="comp-text">{{asideData}}</p>
       <div class="cont-inyectado">
         Contenido inyectado:
+
+        <div style="border: 1px solid white; padding: 10px">
+        <h3>Twitch Top Games</h3>
         <div *ngFor="let item of twitchDataArray">
           <div>{{item.name}}</div>
-          <div><img src="{{item.box_art_url}}"></div>
+          <div><img src="{{ item.box_art_url | twitchUrl }}"></div>
         </div>
       </div>
+    </div>
+    
       </aside>
 
 <!-- Fix para las diferencias cuando no hay navbar -->
