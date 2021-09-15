@@ -45,6 +45,8 @@ export class AppComponent implements OnInit {
 
   checkLocation(){
 
+    // TODO: Cambia títulos, modificar y fusionar con los components
+
     if (window.location.href === window.location.origin+'/amigos'){
       this.asideData = "DATOS AMIGOS"
     }
@@ -68,9 +70,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(window.location.href);
+    console.log("Url actual: " + window.location.href);
     console.log("Ruta actual: " + this.router.url);
     console.log("¿Estamos en la home? " + this.routeHome);
+    console.log("Ruta comp: " + window.location.origin+"/mensajes");
     this.checkLocation();
 
     this.isLoggedIn = !!this.fetchService.obtenerToken();
