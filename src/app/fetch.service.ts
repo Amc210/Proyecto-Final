@@ -2,9 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+<<<<<<< HEAD
 //const API_URL = 
 //const API_URL = 'http://localhost:8181/api/';
 const API_URL = "https://trabajo-final01.herokuapp.com/api/";
+=======
+const API_URL = 'https://trabajo-final01.herokuapp.com/api/';
+>>>>>>> 2d8fb29e0624322a9b3ef55ad996b7474a78b779
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
 
