@@ -230,10 +230,15 @@ ul > li{
 }
 
 /* Capa que engloba los botones de selección de componente hijo (ver, añadir etc) */
+
 .cp-selection{
     margin-top: 10px;
     font-family: Jet-Set;
     font-size: 20px;
+    padding: 1%;
+    background-color: gray;
+    margin: 0 auto;
+    display: inline-block;
 }
 
 .component-header{

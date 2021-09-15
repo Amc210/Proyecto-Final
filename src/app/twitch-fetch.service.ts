@@ -28,8 +28,12 @@ export class TwitchFetchService {
       return this.http.get(API_URL + "games/top?first=4", httpOptions);
     }
 
+    if (tipo == "streams") {
+      return this.http.get(API_URL + "streams/?first=4", httpOptions);
+    }
+
     if (tipo == "streamers") {
-      return this.http.get(API_URL);
+      return this.http.get(API_URL + "games/top?first=4", httpOptions);
     }
 
     else {

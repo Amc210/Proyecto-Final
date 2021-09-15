@@ -88,7 +88,6 @@ export class FetchService {
     else {
       console.log("Error en los datos del post");
       return this.http.get(API_URL);
-
     }
 
   }

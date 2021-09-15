@@ -35,29 +35,18 @@
     </header>
 
     <div class="comp-container">
-      <!-- Controlar que salga el aside dependiendo de la pag -->
-      <!-- Quitarlo en HOME, en Sobre etc-->
-    <aside class="logostile font-sm" *ngIf="!isHomePage()">
-      <h3>{{tituloAsideData}}</h3>
-      <p class="comp-text">{{asideData}}</p>
-      <div class="cont-inyectado">
-        Contenido inyectado:
+      <aside  class="logostile font-sm">
+      <app-aside *ngIf="!isHomePage()">
 
-        <div style="border: 1px solid white; padding: 10px">
-        <h3>Twitch Top Games</h3>
-        <div *ngFor="let item of twitchDataArray">
-          <div>{{item.name}}</div>
-          <div><img src="{{ item.box_art_url | twitchUrl }}"></div>
-        </div>
-      </div>
-    </div>
-    
-      </aside>
-
-<!-- Fix para las diferencias cuando no hay navbar -->
+      </app-aside>
+    </aside>
+      
+<!-- Fix para las diferencias cuando no hay ASIDE -->
     <main *ngIf="!isHomePage()">
+      
       <router-outlet></router-outlet>
       </main>
+
       <main *ngIf="isHomePage()" style="padding: 0">
         <app-inicio></app-inicio>
       </main>

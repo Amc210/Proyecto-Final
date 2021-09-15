@@ -2,13 +2,14 @@
   <div class="cp-parent-header">
 <h2 class="cp-title" >{{titulo}}</h2>
   <br>
-  <div class="cp-selection">
+</div>
+</div>
+
+<div class="cp-selection">
       <button (click)="misGrupos()">Mis grupos</button> | 
       <button (click)="verGrupos()">Ver grupos</button> | 
       <button (click)="buscarGrupo()">Buscar grupo</button> | 
       <button (click)="crearGrupo()">Crear grupo</button>
-  </div>
-  </div>
 </div>
 
 <app-mis-grupos *ngIf="opcionElegida == 1"></app-mis-grupos>

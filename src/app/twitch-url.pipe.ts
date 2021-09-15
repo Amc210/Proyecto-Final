@@ -11,7 +11,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TwitchUrlPipe implements PipeTransform {
 
   transform(value: string): any {
-    return value.replace("{width}x{height}", "200x200");
+    return value.replace("{width}x{height}", "188x250");
   }
 
 }

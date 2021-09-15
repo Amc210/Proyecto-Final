@@ -1,0 +1,30 @@
+      <!-- Controlar que salga el aside dependiendo de la pag -->
+      <!-- Quitarlo en HOME, en Sobre etc-->
+    <!-- Tienen que ver con la página actual -->
+        <h3>{{tituloAsideData}}</h3>
+        <p class="comp-text">{{asideData}}</p>
+
+    <!-- Datos de Twitch para rellenar -->
+        <div class="cont-inyectado">
+          Te puede interesar:
+  
+          <div style="border: 1px solid white; padding: 10px">
+          <h3>Twitch Top Games</h3>
+          <div *ngFor="let item of twitchDataArray">
+            <div>{{item.name}}</div>
+            <div><img src="{{ item.box_art_url | twitchUrl }}"></div>
+          </div>
+        </div>
+
+        <div style="border: 1px solid white; padding: 10px">
+          <h3>Twitch Top Streams</h3>
+          <div *ngFor="let item of twitchStreamsArray">
+            <div>{{item.user_login}}</div>
+            <div><span>Viewers: </span>{{item.viewer_count}}</div>
+            <div><span>Lang: </span>{{item.language}}</div>
+            <div><img src="{{ item.thumbnail_url | twitchUrl }}"></div>
+            
+          </div>
+        </div>
+
+      </div>

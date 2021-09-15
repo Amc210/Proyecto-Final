@@ -31,6 +31,7 @@ import { EnviarMensajeComponent } from './mensajes/enviar-mensaje/enviar-mensaje
 import { VerMensajesComponent } from './mensajes/ver-mensajes/ver-mensajes.component';
 import { DetalleMensajeComponent } from './mensajes/detalle-mensaje/detalle-mensaje.component';
 import { TwitchUrlPipe } from './twitch-url.pipe';
+import { AsideComponent } from './aside/aside.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { TwitchUrlPipe } from './twitch-url.pipe';
     UserbarComponent,
     MisGruposComponent,
     BuscarGrupoComponent,
-    TwitchUrlPipe
+    TwitchUrlPipe,
+    AsideComponent
   ],
   imports: [
     BrowserModule,
