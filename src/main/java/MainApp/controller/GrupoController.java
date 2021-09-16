@@ -38,7 +38,7 @@ public class GrupoController {
 	
 	@GetMapping("/grupos/juego/{juego}")
 	public List<Grupo> listarJuego(@PathVariable(name="juego") String juego) {
-	    return grupoService.listarNombre(juego);
+	    return grupoService.listarJuego(juego);
 	}
 
 	
