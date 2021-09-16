@@ -12,5 +12,5 @@ public interface IGrupoService {
 	public Grupo crearGrupo(Grupo grupo);
 	public void deleteGrupo(Integer id);
 	public List<Grupo> listarGrupos();
-	Optional<Grupo> listarGrupo(Integer id);
+	public Optional<Grupo> listarGrupo(Integer id);
 }
