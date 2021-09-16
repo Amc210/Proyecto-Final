@@ -27,6 +27,10 @@ public class Grupo {
 	private String nombre;
 	@Column(name="creador")
 	private String creador;
+	@Column(name="tipo")
+	private int tipo;
+	@Column(name="descripcion")
+	private String descripcion;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_juego")
@@ -46,12 +50,15 @@ public class Grupo {
 	public Grupo() {
 		
 	}
-
-	public Grupo(int id, String nombre, String creador, Juego juego, List<Mensaje> mensaje, List<Usuario_pertenece_a_grupo> usuario_pertenece_a_grupo) {
+	
+	public Grupo(int id, String nombre, String creador, int tipo, String descripcion, Juego juego,
+			List<Mensaje> mensaje, List<Usuario_pertenece_a_grupo> usuario_pertenece_a_grupo) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.creador = creador;
+		this.tipo = tipo;
+		this.descripcion = descripcion;
 		this.juego = juego;
 		this.mensaje = mensaje;
 		this.usuario_pertenece_a_grupo = usuario_pertenece_a_grupo;
@@ -82,10 +89,25 @@ public class Grupo {
 		this.creador = creador;
 	}
 
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
 	public Juego getJuego() {
 		return juego;
 	}
-
 	public void setJuego(Juego juego) {
 		this.juego = juego;
 	}
@@ -112,8 +134,8 @@ public class Grupo {
 	// ToString
 	@Override
 	public String toString() {
-		return "Grupo [id=" + id + ", nombre=" + nombre + ", creador=" + creador + ", juego=" + juego + "]";
+		return "Grupo [id=" + id + ", nombre=" + nombre + ", creador=" + creador + ", tipo=" + tipo + ", descripcion="
+				+ descripcion + ", juego=" + juego + "]";
 	}
-	
-	
+
 }

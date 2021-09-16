@@ -26,8 +26,6 @@ public class Usuario {
 	private String nick;
 	@Column(name = "nombre")
 	private String nombre;
-	@Column(name = "tipo")
-	private int tipo;
 	@Column(name = "email")
 	private String email;
 	@Column(name = "password")
@@ -57,7 +55,6 @@ public class Usuario {
 		this.id = id;
 		this.nick = nick;
 		this.nombre = nombre;
-		this.tipo = tipo;
 		this.email = email;
 		this.usuario_pertenece_a_grupo = usuario_pertenece_a_grupo;
 		this.agregan = agregan;
@@ -87,14 +84,6 @@ public class Usuario {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public int getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
 	}
 
 	public String getEmail() {
@@ -146,7 +135,7 @@ public class Usuario {
 	// ToString
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nick=" + nick + ", nombre=" + nombre + ", tipo=" + tipo + ", email=" + email
+		return "Usuario [id=" + id + ", nick=" + nick + ", nombre=" + nombre + ", email=" + email
 				+ ", password=" + password + ", usuario_pertenece_a_grupo=" + usuario_pertenece_a_grupo + ", agregan="
 				+ agregan + ", mensaje_privado=" + mensaje_privado + "]";
 	}
