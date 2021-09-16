@@ -41,18 +41,25 @@ public class GrupoController {
 	    return grupoService.listarJuego(juego);
 	}
 
-	
 	@GetMapping("/grupos")
 	public List<Grupo> listarGrupos(){
 		return grupoService.listarGrupos();
+	}
+	
+	@GetMapping("/grupos/{id}")
+	public void listarGrupo(@PathVariable(name="id")Integer id) {
+		grupoService.listarGrupo(id);
 	}
 	
 	@PostMapping("/grupos")
 	public Grupo crearGrupo(@RequestBody Grupo grupo) {
 		return grupoService.crearGrupo(grupo);
 	}
+	
 	@DeleteMapping("/grupos/{id}")
 	public void deleteGrupo(@PathVariable(name="id")Integer id) {
 		grupoService.deleteGrupo(id);
 	}
+	
+	
 }

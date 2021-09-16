@@ -1,6 +1,7 @@
 package MainApp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,11 +38,18 @@ public class GrupoService implements IGrupoService{
 		// TODO Auto-generated method stub
 		GrupoDAO.deleteById(id);
 	}
-
+	
 	@Override
 	public List<Grupo> listarGrupos() {
 		// TODO Auto-generated method stub
 		return GrupoDAO.findAll();
 	}
+
+	@Override
+	public Optional<Grupo> listarGrupo(Integer id) {
+		// TODO Auto-generated method stub
+		return GrupoDAO.findById(id);
+	}
+
 
 }

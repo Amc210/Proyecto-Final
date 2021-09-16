@@ -1,6 +1,7 @@
 package MainApp.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import MainApp.dto.Grupo;
 
@@ -11,4 +12,5 @@ public interface IGrupoService {
 	public Grupo crearGrupo(Grupo grupo);
 	public void deleteGrupo(Integer id);
 	public List<Grupo> listarGrupos();
+	Optional<Grupo> listarGrupo(Integer id);
 }
