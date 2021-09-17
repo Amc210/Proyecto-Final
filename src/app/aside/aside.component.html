@@ -12,7 +12,7 @@
 
           <div id="twtv-games-loop-container" *ngFor="let item of twitchDataArray">
             <img width="70" height="88" src="{{ item.box_art_url | twitchUrl }}" style="margin-right: 20px">
-            <span class="twtv-item-title">{{item.name}}</span>
+            <span class="twtv-item-title" style="font-size: 1.2em">{{item.name}}</span>
           </div>
         </div><br>
 
@@ -20,13 +20,12 @@
 
         <div id="twtv-panel">
           <h3 class="cp-inner-subtitle">Top Streams <span style="color: purple">Twitch.tv</span></h3>
-          <div *ngFor="let item of twitchStreamsArray">
+          <div *ngFor="let item of twitchStreamsArray" style="margin-bottom: 10px">
 
 
-            <div>{{item.user_login}}</div>
+            <h4>{{item.user_login}}</h4>
             <div><img src="{{ item.thumbnail_url | twitchThumb }}"></div>
-            <div><span>Viewers: </span>{{item.viewer_count}}</div>
-            <div><span>Lang: </span>{{item.language}}</div>
+            <div><span style="color: red">●</span><span style="font-size: 18px">Viewers: {{item.viewer_count}} | Idioma: {{item.language}}</span></div>
           </div>
         </div>
 
