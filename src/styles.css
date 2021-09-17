@@ -210,6 +210,11 @@ label{
     height: 96px
 }
 
+#profile-logged-container, #profile-container{
+    min-width: 300px;
+
+}
+
 #profile-container div{
     float: left;
     border: 1px solid red;
