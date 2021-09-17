@@ -1,10 +1,13 @@
+<div class="cp-inner">
 <div id="login-container" style="text-align: center">
     <!--  *ngIf="isLoggedOn" -->
-    <h2>AÑADE AMIGO POR NOMBRE USUARIO - NICK</h2>
+    <h2 class="cp-inner-title">AGREGA AMIGOS</h2>
 <form [formGroup]="outputForm" (ngSubmit)="submitForm()" style="margin-top: 40px">
-<input type="text" id="uame" formControlName="nombreAmigo">
-<br>
-<button type="submit" value="submit">AGREGAR</button>
+    <label>Nombre usuario amigo / ID:</label><br>
+<input type="text" id="uame"S formControlName="nombreAmigo">
+<br><br>
+<button type="submit" value="submit" class="btn-submit">Añadir</button>
 <div id="vacio-respuesta" *ngIf="!exito"></div>
 </form>
+</div>
 </div>

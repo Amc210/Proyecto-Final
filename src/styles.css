@@ -76,7 +76,7 @@ aside{
 nav{
     height: 100px;
     vertical-align: middle;
-    background-color: #465362;
+    /*background-color: #465362;*/
     display: flex;
     align-items: center;
     justify-content:center;
