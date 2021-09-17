@@ -1,26 +1,33 @@
-
 <div>
     <table class="table table-bck">
         <thead class="thead-dark">
           <tr>
-            <th scope="col">#Num. Usuarios</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Creador</th>
+            <th scope="col">ID</th>
+            <th scope="col"># Usuarios</th>
+            <th scope="col">Nombre grupo</th>
+            <th scope="col">Admin</th>
             <th scope="col">Juego</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Descripción</th>
             <th scope="col">Gestionar</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let item of getData">
             <th scope="row" >{{item.id}}</th>
+            <td>444</td>
             <td>{{item.nombre}}</td>
             <td>{{item.creador}}</td>
-            <td>{{item.juego.nombre}}<img width="64px" style="margin-left: 4px; border: 2px solid black" src="../../assets/img-juegos/{{item.juego.imagen}}"></td>
+            <td><img width="64px" style="margin-left: 4px; border: 2px solid black" src="../../assets/img-juegos/{{item.juego.imagen}}">{{item.juego.nombre}}</td>
+            <td>
+              
+              <button>{{item.tipo | tipoGrupo}}</button>
+            </td>
+            <td>{{item.descripcion}}</td>
             <td>
               <button>Entrar</button>
               <button>Info</button>
-              <button>Dejar</button>
-            </td>
+              <button>Dejar</button></td>
           </tr>
         </tbody>
       </table>

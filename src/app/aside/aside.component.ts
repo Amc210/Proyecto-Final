@@ -25,8 +25,32 @@ export class AsideComponent implements OnInit {
     private twitchFetchService:TwitchFetchService
     ){}
 
+    checkLocation(){
+
+      // TODO: Cambia títulos, modificar y fusionar con los components
+  
+      if (window.location.href === window.location.origin+'/amigos'){
+        this.asideData = "Gestionar amigos";
+      }
+  
+      else if (window.location.href === window.location.origin+'/grupos') {
+        this.asideData = "Gestionar grupos";
+      }
+  
+      else if (window.location.href === window.location.origin+'/mensajes') {
+        this.asideData = this.asideMensajes;
+        this.tituloAsideData = "Mensajería";
+      }
+  
+      else {
+        this.asideData = "Aside";
+      }
+  
+    }
+
   ngOnInit(): void {
 
+    this.checkLocation();
     this.twitchFetchService.obtenerDatos("juegos").subscribe(
       data => {
         console.log(data);

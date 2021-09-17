@@ -6,13 +6,15 @@
 </div>
 
 <div class="cp-selection">
-      <button (click)="misGrupos()">Mis grupos</button> | 
+      <button [ngClass]="['btnStyle']" (click)="misGrupos()">Mis grupos</button> | 
       <button (click)="verGrupos()">Ver grupos</button> | 
       <button (click)="buscarGrupo()">Buscar grupo</button> | 
-      <button (click)="crearGrupo()">Crear grupo</button>
+      <button (click)="crearGrupo()">Crear grupo</button> | 
+      <button (click)="entrarGrupo()">Ver grupo</button>
 </div>
 
 <app-mis-grupos *ngIf="opcionElegida == 1"></app-mis-grupos>
 <app-ver-grupos *ngIf="opcionElegida == 2"></app-ver-grupos>
 <app-buscar-grupo *ngIf="opcionElegida == 3"></app-buscar-grupo>
 <app-crear-grupo *ngIf="opcionElegida == 4"></app-crear-grupo>
+<app-detalle-grupo *ngIf="opcionElegida == 5"></app-detalle-grupo>

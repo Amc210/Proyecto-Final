@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GruposComponent implements OnInit {
 
+  btnStyle:string = "grupost";
   titulo:string = 'Grupos';
   desc:string = 'Crea un grupo para jugar o gestiona tus grupos';
 
   opcionElegida: number = 1;
 
   misGrupos(){
+    this.btnStyle = "grupost";
     this.opcionElegida = 1;
   }
 
@@ -28,10 +30,13 @@ export class GruposComponent implements OnInit {
     this.opcionElegida = 4;
   }
 
+  entrarGrupo(){
+    this.opcionElegida = 5;
+  }
+
   constructor(){}
 
   ngOnInit(){
-
   }
 
 }

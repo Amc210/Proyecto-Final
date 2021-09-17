@@ -21,7 +21,7 @@ const httpOptions = {
 
 export class FetchService {
 
-  authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE2NzE5NDksImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNTM1OTQ5fQ.VAchJQ1bz7ZNC5VBFM9f_ZQx4KoN4j_nQnZpJaIXz07D_hKia-4GtduzX3GqnAvEttOBVuHW4NbuBBsvagdGgw";
+  authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE4MTU3NDQsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNjc5NzQ0fQ.y-i_3JnnXgPD_BoQnUiEUdnsji9sxAoBlDHjjwUitCxgc_BrMKVcgoQnYvx7qvgVjpgkftqIilLqiDwSWfbWcQ";
 
   constructor(private http: HttpClient) {}
 
@@ -92,7 +92,7 @@ export class FetchService {
 
   }
 
-  obtenerDatos(tipo:string) {
+  obtenerDatos(tipo:string) : Observable<any> {
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
@@ -107,6 +107,10 @@ export class FetchService {
       return this.http.get(API_URL + "grupos/nombre/", {headers: headers});
     }
 
+    if (tipo == "gruposxid") {
+      return this.http.get(API_URL + "grupos/id/1", {headers: headers});
+    }
+
     if (tipo == "grupos") {
       return this.http.get(API_URL + "grupos/", {headers: headers});
     }
@@ -117,6 +121,10 @@ export class FetchService {
 
     if (tipo == "amigos") {
       return this.http.get(API_URL + "amigos/");
+    }
+
+    if (tipo == "juegos") {
+      return this.http.get(API_URL + "juegos/");
     }
 
     else {

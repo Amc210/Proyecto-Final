@@ -10,17 +10,21 @@ import { FetchService } from '../../fetch.service';
 export class CrearGrupoComponent implements OnInit {
 
   outputForm:FormGroup;
-  login:string = '';
-  pass:string = '';
+  usuario:string = "TestUsuario";
   juego:number = 0;
+  juegos:any;
+  arrayJuegos:Array<any> = new Array();
   data:any;
+  seleccionado:any;
 
   constructor(private formBuilder: FormBuilder, private fetchService: FetchService) {   
     this.outputForm = formBuilder.group(
     {
       'nombre' : [null],
-      'creador': [null],
-      'juego': [null]
+      'creador': 1,
+      'juego': [null],
+      'tipo':[null],
+      'descripcion':[null]
     }
   );
 }
@@ -38,6 +42,20 @@ submitForm(){
 }
 
   ngOnInit(): void {
+
+    this.fetchService.obtenerDatos("juegos").subscribe(
+      result => {
+        console.log("Resultado juegos: " + result);
+        this.juegos = result;
+        //this.arrayJuegos = Object.keys(this.juegos).map(key => ({type: key, value: this.juegos[key]}));
+        //console.log("Salida juegos: " + this.juegos);
+        return result;
+      },
+      error => {
+        console.log("Problemas...");
+      }
+    )
+
   }
 
 }

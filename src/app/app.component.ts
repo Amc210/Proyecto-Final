@@ -45,28 +45,7 @@ export class AppComponent implements OnInit {
     return str.concat("{TESTT}");
   }
 
-  // checkLocation(){
-
-  //   // TODO: Cambia títulos, modificar y fusionar con los components
-
-  //   if (window.location.href === window.location.origin+'/amigos'){
-  //     this.asideData = "Gestionar amigos"
-  //   }
-
-  //   else if (window.location.href === window.location.origin+'/grupos') {
-  //     this.asideData = "Gestionar grupos";
-  //   }
-
-  //   else if (window.location.href === window.location.origin+'/mensajes') {
-  //     this.asideData = this.asideMensajes;
-  //     this.tituloAsideData = "Mensajería"
-  //   }
-
-  //   else {
-  //     this.asideData = "Aside";
-  //   }
-
-  // }
+  
 
   ngOnInit(): void {
 
@@ -74,7 +53,6 @@ export class AppComponent implements OnInit {
     //console.log("Ruta actual: " + this.router.url);
     console.log("¿Estamos en la home? " + this.isHomePage());
     //console.log("Ruta comp: " + window.location.origin+"/mensajes");
-    //this.checkLocation();
 
     this.isLoggedIn = !!this.fetchService.obtenerToken();
 

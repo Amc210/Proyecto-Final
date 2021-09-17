@@ -7,24 +7,27 @@
     <!-- Datos de Twitch para rellenar -->
         <div class="cont-inyectado">
           Te puede interesar:
-  
-          <div style="border: 1px solid white; padding: 10px">
-          <h3>Twitch Top Games</h3>
-          <div *ngFor="let item of twitchDataArray">
-            <div>{{item.name}}</div>
-            <div><img src="{{ item.box_art_url | twitchUrl }}"></div>
-          </div>
-        </div>
 
-        <div style="border: 1px solid white; padding: 10px">
-          <h3>Twitch Top Streams</h3>
-          <div *ngFor="let item of twitchStreamsArray">
-            <div>{{item.user_login}}</div>
-            <div><span>Viewers: </span>{{item.viewer_count}}</div>
-            <div><span>Lang: </span>{{item.language}}</div>
-            <div><img src="{{ item.thumbnail_url | twitchUrl }}"></div>
-            
+          <h3 class="twtv-panel-title">Top Juegos <span style="color: purple">Twitch.tv</span></h3>
+          <div id="twtv-panel">
+
+          <div id="twtv-games-loop-container" *ngFor="let item of twitchDataArray">
+            <img width="99" height="125" src="{{ item.box_art_url | twitchUrl }}" style="margin-right: 20px">
+            <span class="twtv-item-title">{{item.name}}</span>
           </div>
-        </div>
+        </div><br>
 
       </div>
+
+        <div id="twtv-panel">
+          <h3 class="cp-inner-subtitle">Top Streams <span style="color: purple">Twitch.tv</span></h3>
+          <div *ngFor="let item of twitchStreamsArray">
+
+
+            <div>{{item.user_login}}</div>
+            <div><img src="{{ item.thumbnail_url | twitchThumb }}"></div>
+            <div><span>Viewers: </span>{{item.viewer_count}}</div>
+            <div><span>Lang: </span>{{item.language}}</div>
+          </div>
+        </div>
+

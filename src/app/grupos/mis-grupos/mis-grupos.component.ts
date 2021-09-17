@@ -16,18 +16,18 @@ export class MisGruposComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.fetchService.obtenerDatos("grupos").subscribe(
-      result => {
-        this.grupos = result;
-        this.listaGrupos = Object.keys(this.grupos).map(key => ({type: key, value: this.grupos[key]}));
-        this.arrayGrupos = this.arrayGrupos[1].value;
-        console.log(this.grupos);
-        return this.arrayGrupos;
-      },
-      error => {
-        console.log("Problemas...");
-      }
-    )
+    // this.fetchService.obtenerDatos("grupos").subscribe(
+    //   result => {
+    //     this.grupos = result;
+    //     this.listaGrupos = Object.keys(this.grupos).map(key => ({type: key, value: this.grupos[key]}));
+    //     this.arrayGrupos = this.arrayGrupos[1].value;
+    //     console.log(this.grupos);
+    //     return this.arrayGrupos;
+    //   },
+    //   error => {
+    //     console.log("Problemas...");
+    //   }
+    // )
 
   }
 

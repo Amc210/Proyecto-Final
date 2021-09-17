@@ -1,24 +1,41 @@
-<div id="login-container" style="text-align: center">
+
+
+<div class="cp-inner-central">
+
+<div id="login-container">
     <!--  *ngIf="isLoggedOn" -->
-    <h2>CREA UN GRUPO</h2>
+    <h2 class="cp-inner-title">CREA UN GRUPO</h2>
+
 <form [formGroup]="outputForm" (ngSubmit)="submitForm()" style="margin-top: 40px">
-    <span>NOMBRE DEL GRUPO:</span>
+
+    <label>CREADOR: <span>{{usuario}}</span></label><br>
+
+    <label><span>Nombre del grupo: </span></label>
 <input type="text" id="uame" formControlName="nombre">
 <br>
-<span>CREADOR??</span>
-<input type="text" id="uame" formControlName="creador">
-<br>
-<span>ELIGE JUEGO:</span>
-<select name="juego" id="juego" formControlname="juego">
-    <option value="rigatoni">Rigatoni</option>
-<option value="dave">Dave</option>
-<option value="pumpernickel">Pumpernickel</option>
-<option value="reeses">Reeses</option>
-    </select>
-<br>
 
-<button type="submit" value="submit">AGREGAR</button>
+<!--<input type="text" id="uame" formControlName="creador" value="1"> -->
+<label><span>¿Para qué juego?:</span></label>
+<select name="juego" id="juego" formControlname="juego">
+    <option *ngFor="let item of arrayJuegos" value="{{item}}">{{item.name}}</option>
+</select>
+
+<br>
+<label><span>Elige tipo: </span></label>
+<select name="tipo" id="tipogrupo" formControlname="tipo">
+    <option value="casual">Casual</option>
+    <option value="casual">Competitivo</option>
+    <option value="casual">Charla</option>
+</select><br>
+<label><span>Descripción: </span></label>
+<input type="text" id="uame" formControlName="nombre">
+<br>
+<br>
+<button class="btn-submit" type="submit" value="submit">Crear grupo</button>
+
 <div id="vacio-respuesta"></div>
 </form>
+
 </div>
 
+</div>

@@ -2,16 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { FetchService } from '../../fetch.service';
 
 @Component({
-  selector: 'app-ver-grupos',
-  templateUrl: './ver-grupos.component.html',
-  styleUrls: ['./ver-grupos.component.css']
+  selector: 'app-detalle-grupo',
+  templateUrl: './detalle-grupo.component.html',
+  styleUrls: ['./detalle-grupo.component.css']
 })
-export class VerGruposComponent implements OnInit {
+
+export class DetalleGrupoComponent implements OnInit {
 
   grupos:any;
   getData:any;
   arrayData:Array<any> = new Array();
-  tipo:number=0;
+  tipo:any;
 
   constructor(private fetchService:FetchService) { }
 
@@ -21,11 +22,7 @@ export class VerGruposComponent implements OnInit {
       result => {
         console.log(result);
         this.getData = result;
-        //this.tipo = this.getData[0].value.tipo;
-        console.log("Getdata: " + this.getData);
-        console.log(this.getData[0].tipo);
-        this.tipo = this.getData[0].tipo;
-        //console.log("tipo: " + this.tipo);
+        console.log(this.getData);
         return result;
       },
       error => {

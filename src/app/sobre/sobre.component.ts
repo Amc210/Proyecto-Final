@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreComponent implements OnInit {
 
+  titulo:string = "Sobre LFG";
+
   constructor() { }
 
   ngOnInit(): void {

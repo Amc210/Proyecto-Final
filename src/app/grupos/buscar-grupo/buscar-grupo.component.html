@@ -1,8 +1,43 @@
-<p>buscar-grupo works!</p>
 
-<h2>O busca en la lista:</h2>
 
+<div class="cp-inner-central">
+
+  <div id="cp-search-container">
+      <!--  *ngIf="isLoggedOn" -->
+      <h2 class="cp-inner-title">BUSCA UN GRUPO</h2>
+  
+  <form style="margin-top: 20px">
+      <label><span>Buscar por nombre: </span></label>
+  <input type="text" id="uame" formControlName="nombre">
+  <button class="btn-submit"  type="submit" value="submit">Buscar</button>
+  <br>
+  
+  <!--<input type="text" id="uame" formControlName="creador" value="1"> -->
+
+  
+  <br>
+  <label><span>Buscar por tipo: </span></label>
+  <select name="tipo" id="tipogrupo" formControlname="tipo">
+      <option value="casual">Casual</option>
+      <option value="casual">Competitivo</option>
+      <option value="casual">Charla</option>
+  </select>
+  <button class="btn-submit" type="submit" value="submit">Buscar</button>
+  <br>
+  
+  
+  <div id="vacio-respuesta"></div>
+  </form>
+  
+  </div>
+<br>
+  <h2>O busca en la lista:</h2>
+
+  <br><br>
 <div *ngFor="let item of arrayFinal">
     <div>{{item.nombre_juego}}</div>
     
   </div>
+  
+  </div>
+
