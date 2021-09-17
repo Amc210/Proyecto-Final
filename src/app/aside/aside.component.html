@@ -23,7 +23,7 @@
           <div *ngFor="let item of twitchStreamsArray" style="margin-bottom: 10px">
 
 
-            <h4>{{item.user_login}}</h4>
+            <h4>{{item.user_name}}</h4>
             <div><img src="{{ item.thumbnail_url | twitchThumb }}"></div>
             <div><span style="color: red">●</span><span style="font-size: 18px">Viewers: {{item.viewer_count}} | Idioma: {{item.language}}</span></div>
           </div>
