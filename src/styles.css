@@ -52,7 +52,7 @@ footer{
 
 main{
     width: 100%;
-    min-height: 720px;
+   /* min-height: 720px;*/
     margin: 0;
     padding: 2%;
     background-color: transparent;
