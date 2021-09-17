@@ -21,7 +21,8 @@ header{
 }
 
 .col-login{
-    border: 1px solid yellow; background-color: gray; display: flex
+    background-color: gray;
+    display: flex
 }
 
 body{
@@ -194,10 +195,10 @@ label{
 /* Logueado - no Logueado */
 
 #logo-container{
-    border: 2px solid blue;
     width: 180px;
     height: 96px;
     padding-right: 10px;
+    background-image: url('/assets/def/logo-test.png');
 }
 
 #user-avatar{
@@ -496,5 +497,6 @@ td{
     src: url("assets/fonts/PixeloidMono.ttf");
     font-weight: 300;
 }
+
 
 

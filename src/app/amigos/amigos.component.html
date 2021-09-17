@@ -1,13 +1,14 @@
 <div class="cp-parent-container">
     <div class="cp-parent-header">
-<h2 class="cp-title" >AMIGOS</h2>
+  <h2 class="cp-title" >{{titulo}}</h2>
     <br>
-    <div class="cp-selection">
-        <button (click)="verContenido()">Ver Amigos</button> | 
-        <button (click)="addContenido()">Añadir Amigo</button>
-    </div>
-    </div>
-</div>
+  </div>
+  </div>
+  
+  <div class="cp-selection">
+    <button (click)="verContenido()">Ver Amigos</button> | 
+    <button (click)="addContenido()">Añadir Amigo</button>
+  </div>
 
 <app-ver-amigos *ngIf="opcionElegida == 1"></app-ver-amigos>
 <app-add-amigo *ngIf="opcionElegida == 2"></app-add-amigo>

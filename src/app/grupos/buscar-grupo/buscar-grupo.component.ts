@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { FetchService } from 'src/app/fetch.service';
@@ -22,8 +23,7 @@ export class BuscarGrupoComponent implements OnInit {
       data => {
         console.log(data);
         this.payload = data;
-        this.arrayPayload = Object.keys(this.payload).map(key => ({type: key, value: this.payload[key]}));
-        this.arrayFinal = this.arrayPayload[0].value;
+        
         //this.twitchDataArray = this.twitchData.value;
         return data;
       },

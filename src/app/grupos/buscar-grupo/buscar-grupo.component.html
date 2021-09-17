@@ -6,9 +6,9 @@
       <!--  *ngIf="isLoggedOn" -->
       <h2 class="cp-inner-title">BUSCA UN GRUPO</h2>
   
-  <form style="margin-top: 20px">
+      <form style="margin-top: 40px">
       <label><span>Buscar por nombre: </span></label>
-  <input type="text" id="uame" formControlName="nombre">
+  <input type="text" id="uame">
   <button class="btn-submit"  type="submit" value="submit">Buscar</button>
   <br>
   
@@ -17,7 +17,7 @@
   
   <br>
   <label><span>Buscar por tipo: </span></label>
-  <select name="tipo" id="tipogrupo" formControlname="tipo">
+  <select name="tipo" id="tipogrupo">
       <option value="casual">Casual</option>
       <option value="casual">Competitivo</option>
       <option value="casual">Charla</option>
@@ -34,10 +34,13 @@
   <h2>O busca en la lista:</h2>
 
   <br><br>
-<div *ngFor="let item of arrayFinal">
-    <div>{{item.nombre_juego}}</div>
+  <div id="games-loop-container">
+<ul *ngFor="let item of payload">
+    <li>{{item.nombre}}</li>
     
-  </div>
+</ul>
+
+</div>
   
   </div>
 

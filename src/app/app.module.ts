@@ -36,6 +36,7 @@ import { DetalleGrupoComponent } from './grupos/detalle-grupo/detalle-grupo.comp
 import { TwitchThumbnailPipe } from './twitch-thumbnail.pipe';
 import { SobreContenidoComponent } from './sobre/sobre-contenido/sobre-contenido.component';
 import { TipoGrupoPipe } from './tipo-grupo.pipe';
+import { ToNumPipe } from './to-num.pipe';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { TipoGrupoPipe } from './tipo-grupo.pipe';
     DetalleGrupoComponent,
     TwitchThumbnailPipe,
     SobreContenidoComponent,
-    TipoGrupoPipe
+    TipoGrupoPipe,
+    ToNumPipe
   ],
   imports: [
     BrowserModule,

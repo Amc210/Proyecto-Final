@@ -19,7 +19,10 @@ export class AsideComponent implements OnInit {
 
   twitchStreamsArray:Array<any> = new Array();
 
-  asideMensajes:string = "Puedes enviar mensajes a tus contactos para organizar grupos o charlar. Gestiona tus mensajes o inicia una conversación."
+  asideMensajes:string = "Puedes enviar mensajes a tus contactos para organizar grupos o charlar. Gestiona tus mensajes o inicia una conversación.";
+  asideGrupos:string = "Únete a grupos de gente para organizar partidas, ampliar tu lista de contactos o charlar sobre gustos en común.";
+  asideAmigos:string = "Añade amigos para tener contacto directo e interactuar en el futuro con el resto de jugadores.";
+
 
   constructor(
     private twitchFetchService:TwitchFetchService
@@ -30,11 +33,13 @@ export class AsideComponent implements OnInit {
       // TODO: Cambia títulos, modificar y fusionar con los components
   
       if (window.location.href === window.location.origin+'/amigos'){
-        this.asideData = "Gestionar amigos";
+        this.asideData = this.asideAmigos;
+        this.tituloAsideData = "Amigos";
       }
   
       else if (window.location.href === window.location.origin+'/grupos') {
-        this.asideData = "Gestionar grupos";
+        this.asideData = this.asideGrupos;
+        this.tituloAsideData = "Grupos";
       }
   
       else if (window.location.href === window.location.origin+'/mensajes') {
@@ -43,7 +48,7 @@ export class AsideComponent implements OnInit {
       }
   
       else {
-        this.asideData = "Aside";
+        this.asideData = "LFG";
       }
   
     }

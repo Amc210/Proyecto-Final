@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-//const API_URL = 
 //const API_URL = 'http://localhost:8181/api/';
 const API_URL = "https://trabajo-final01.herokuapp.com/api/";
 const TOKEN_KEY = 'auth-token';
@@ -21,6 +20,7 @@ const httpOptions = {
 
 export class FetchService {
 
+  //authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE4NDc4MjUsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNzExODI1fQ.94MAU774t_N3YQF0qXYPpBDOYV1aevkLVngT-pY7EPal35PyS2AcSyUPganFstEBYeL__hZlTAFsw2T-PGxd8Q";
   authToken:string = "eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE2MzE4MTU3NDQsImlzcyI6InJvb3QiLCJzdWIiOiJ0ZXN0IiwiZXhwIjoxNjMyNjc5NzQ0fQ.y-i_3JnnXgPD_BoQnUiEUdnsji9sxAoBlDHjjwUitCxgc_BrMKVcgoQnYvx7qvgVjpgkftqIilLqiDwSWfbWcQ";
 
   constructor(private http: HttpClient) {}
@@ -124,7 +124,7 @@ export class FetchService {
     }
 
     if (tipo == "juegos") {
-      return this.http.get(API_URL + "juegos/");
+      return this.http.get(API_URL + "juegos/", {headers: headers});
     }
 
     else {

@@ -16,24 +16,23 @@
 
 <!--<input type="text" id="uame" formControlName="creador" value="1"> -->
 <label><span>¿Para qué juego?:</span></label>
-<select name="juego" id="juego" formControlname="juego">
-    <option *ngFor="let item of arrayJuegos" value="{{item}}">{{item.name}}</option>
+<select name="juego" id="juego" formControlName="id_juego">
+    <option selected="World of Warcraft" *ngFor="let item of juegos" value="{{item.id}}">{{item.nombre}}</option>
 </select>
-
 <br>
 <label><span>Elige tipo: </span></label>
-<select name="tipo" id="tipogrupo" formControlname="tipo">
-    <option value="casual">Casual</option>
-    <option value="casual">Competitivo</option>
-    <option value="casual">Charla</option>
+<select name="tipo" id="tipogrupo" formControlName="tipo">
+    <option [ngValue]="0" >Casual</option>
+    <option [ngValue]="1" >Competitivo</option>
+    <option [ngValue]="2">Charla</option>
 </select><br>
 <label><span>Descripción: </span></label>
-<input type="text" id="uame" formControlName="nombre">
+<input type="text" id="desc" formControlName="descripcion">
 <br>
 <br>
 <button class="btn-submit" type="submit" value="submit">Crear grupo</button>
 
-<div id="vacio-respuesta"></div>
+<div *ngIf="respuestaError" id="vacio-respuesta">Ha habido un error al crear grupo. Revisa tus campos.</div>
 </form>
 
 </div>
